@@ -1,6 +1,6 @@
 import logo from './logo.svg';
 import './App.css';
-import RegistrationForm from './Register';
+import RegistrationForm from './register';
 
 const App = () => {
   return (
