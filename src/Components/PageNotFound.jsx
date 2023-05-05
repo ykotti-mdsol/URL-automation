@@ -1,5 +1,5 @@
 import React from "react";
-import { useNavigate} from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 
 import {
     MDBBtn,
@@ -15,16 +15,15 @@ import {
 }
     from 'mdb-react-ui-kit';
 
+const PageNotFound = () => {
 
-const Error = ()=>{
     const navigate = useNavigate();
     const handleSubmit = () => {
         navigate('/');
-      };
+    };
 
-    return(
+    return (
         <>
-
             <div style={{ display: 'flex', flexDirection: 'column', minHeight: '100vh' }}>
                 <MDBNavbar className=" " style={{ backgroundColor: 'rgba(51, 81, 119, 1)' }}>
                     <MDBContainer fluid>
@@ -37,24 +36,26 @@ const Error = ()=>{
                                 loading='lazy'
                             />
                         </MDBNavbarBrand>
-                       
+
                     </MDBContainer>
                 </MDBNavbar>
 
                 <div style={{ display: 'flex', flexDirection: 'column', justifyContent: 'space-between', flex: 1 }}>
-             
                     <MDBContainer fluid className="d-flex align-items-center justify-content-center flex-grow-1">
-                        
-                        <MDBCard className='p-5 shadow-9' style={{ width: '40%', background: 'hsla(0, 0%, 100%, 0.8)', backdropFilter: 'blur(30px)', marginTop: '5%', marginBottom: '5%' }} id="Fcard">
-                            <MDBCardBody className='p-1 text-center'>
-                            <MDBCardTitle className="text-center"><h2 className="fw-bold">TS - URL Deployment Tool</h2></MDBCardTitle>
-                            <img height="120" src="https://media4.giphy.com/media/KFtoeyGbuENeJrnv2j/giphy.gif?cid=6c09b952bd6ae2bc0f660a8ac1cf862d44f72c5216221c3f&ep=v1_internal_gifs_gifId&rid=giphy.gif&ct=s "/>
-                              <MDBCardSubTitle  className="text-center mb-4 py-3" style={{color:'red'}}><h4 className="fw-bold"> Oops Error!</h4></MDBCardSubTitle>  
-                                <MDBCardText className="text-center ">Sorry!!  Your OrderID: with this Template: is not created.</MDBCardText>
 
-                                <MDBBtn className='  mt-3' size='lg'onClick={handleSubmit} >Try Again</MDBBtn>
+                        <MDBCard className='p-5 shadow-5' style={{ width: '45%', background: 'hsla(0, 0%, 100%, 0.8)', backdropFilter: 'blur(30px)', marginTop: '5%', marginBottom: '5%' }}>
+
+                            <MDBCardBody className='p-1 text-center'>
+                                <MDBCardTitle className="text-center"><h2 className="fw-bold">TS - URL Deployment Tool</h2></MDBCardTitle>
+
+                                <MDBCardSubTitle className="text-center mb-4 py-2" style={{ color: 'red' }}><h4 className="fw-bold"> Oops Error!</h4></MDBCardSubTitle>
+                                <img height="180px" src="https://static.vecteezy.com/system/resources/previews/007/162/540/original/error-404-page-not-found-concept-illustration-web-page-error-creative-design-modern-graphic-element-for-landing-page-infographic-icon-free-vector.jpg" />
+                                <MDBCardText className="text-center py-3" ><h4> Page  Not Found.</h4></MDBCardText>
+
+                                <MDBBtn className='  mt-3' size='lg' onClick={handleSubmit} >Login</MDBBtn>
                             </MDBCardBody>
                         </MDBCard>
+
                     </MDBContainer>
 
                     <MDBFooter className="fs-6">
@@ -74,5 +75,5 @@ const Error = ()=>{
 
         </>
     );
-};
-export default Error;
+}
+export default PageNotFound;

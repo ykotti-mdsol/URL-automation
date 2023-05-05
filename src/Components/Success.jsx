@@ -1,5 +1,5 @@
 import React from "react";
-import { useNavigate} from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 
 import {
     MDBBtn,
@@ -15,16 +15,14 @@ import {
 }
     from 'mdb-react-ui-kit';
 
-
-const Error = ()=>{
+const Success = () => {
     const navigate = useNavigate();
     const handleSubmit = () => {
         navigate('/');
-      };
+    };
 
-    return(
+    return (
         <>
-
             <div style={{ display: 'flex', flexDirection: 'column', minHeight: '100vh' }}>
                 <MDBNavbar className=" " style={{ backgroundColor: 'rgba(51, 81, 119, 1)' }}>
                     <MDBContainer fluid>
@@ -37,22 +35,20 @@ const Error = ()=>{
                                 loading='lazy'
                             />
                         </MDBNavbarBrand>
-                       
+
                     </MDBContainer>
                 </MDBNavbar>
 
                 <div style={{ display: 'flex', flexDirection: 'column', justifyContent: 'space-between', flex: 1 }}>
-             
                     <MDBContainer fluid className="d-flex align-items-center justify-content-center flex-grow-1">
-                        
-                        <MDBCard className='p-5 shadow-9' style={{ width: '40%', background: 'hsla(0, 0%, 100%, 0.8)', backdropFilter: 'blur(30px)', marginTop: '5%', marginBottom: '5%' }} id="Fcard">
+                        <MDBCard className='p-5 shadow-5' style={{ width: '40%', background: 'hsla(0, 0%, 100%, 0.8)', backdropFilter: 'blur(30px)', marginTop: '5%', marginBottom: '5%' }}>
                             <MDBCardBody className='p-1 text-center'>
-                            <MDBCardTitle className="text-center"><h2 className="fw-bold">TS - URL Deployment Tool</h2></MDBCardTitle>
-                            <img height="120" src="https://media4.giphy.com/media/KFtoeyGbuENeJrnv2j/giphy.gif?cid=6c09b952bd6ae2bc0f660a8ac1cf862d44f72c5216221c3f&ep=v1_internal_gifs_gifId&rid=giphy.gif&ct=s "/>
-                              <MDBCardSubTitle  className="text-center mb-4 py-3" style={{color:'red'}}><h4 className="fw-bold"> Oops Error!</h4></MDBCardSubTitle>  
-                                <MDBCardText className="text-center ">Sorry!!  Your OrderID: with this Template: is not created.</MDBCardText>
+                                <MDBCardTitle className="text-center"><h2 className="fw-bold">TS - URL Deployment Tool</h2></MDBCardTitle>
+                                <img height='120px' src='https://cliply.co/wp-content/uploads/2021/03/372103860_CHECK_MARK_400px.gif'></img>
+                                <MDBCardSubTitle className="text-center mb-4 py-3" style={{ color: 'green' }}><h4 className="fw-bold">Congratulation!! </h4></MDBCardSubTitle>
+                                <MDBCardText className="text-center "> Your OrderID: with this Template: has been successfully created.</MDBCardText>
 
-                                <MDBBtn className='  mt-3' size='lg'onClick={handleSubmit} >Try Again</MDBBtn>
+                                <MDBBtn className='  mt-3' size='lg' onClick={handleSubmit} >Create  new</MDBBtn>
                             </MDBCardBody>
                         </MDBCard>
                     </MDBContainer>
@@ -74,5 +70,5 @@ const Error = ()=>{
 
         </>
     );
-};
-export default Error;
+}
+export default Success;

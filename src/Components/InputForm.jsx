@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import './InputForm.css';
-import axios from "axios";      
+import axios from "axios";
 import {
     MDBBtn,
     MDBContainer,
@@ -17,7 +17,7 @@ import {
     MDBDropdownMenu,
     MDBDropdownItem,
     MDBSpinner,
-    MDBNavbarItem
+    MDBNavbarItem,
 }
     from 'mdb-react-ui-kit';
 import { useNavigate } from "react-router-dom";
@@ -36,8 +36,6 @@ const InputForm = () => {
     const [isLoading, setIsLoading] = useState(false);
     const [seconds, setseconds] = useState(60000);
     const apiCloudBoltToken = sessionStorage.getItem("api_CloudBoltToken");
-    //const apiFalcontoken = sessionStorage.getItem("api_FalconToken");
-
     const navigate = useNavigate();
 
     useEffect(() => {
@@ -55,24 +53,6 @@ const InputForm = () => {
         }
         return () => clearInterval(interval);
     }, [seconds]);
-    // var falconResponse;
-    // useEffect(()=>{
-    //     const falconServerURL = "https://mnmapi.hdc.mdsol.com/falcon/api/v1/servers?data_center=lab1";
-    //     const authStringFalcon = `Bearer ${apiFalcontoken}`;
-
-    //     const response = async() =>{  await axios.get(falconServerURL,{
-    //         headers : {
-    //             "Access-Control-Allow-Origin": "*",
-    //             'Content-Type': 'application/json',
-    //             "Accept": "*/*",
-    //             "Authorization" : authStringFalcon
-
-    //         }
-    //     });
-    // }
-    //     console.log(response);
-    //     falconResponse = response;
-    // })
     const formatTime = (time) => {
         return time < 10 ? `0${time}` : time;
     }
@@ -127,9 +107,6 @@ const InputForm = () => {
                 console.log(error.response);
                 if (error.response.status == 401) {
                     alert("Token Expired pls login again");
-                    sessionStorage.removeItem("api_CloudBoltToken");
-                    sessionStorage.removeItem("api_FalconToken");
-                    navigate("/login");
                 }
             } else if (error.request) {
                 alert("network error");
@@ -137,6 +114,8 @@ const InputForm = () => {
                 console.log(error);
                 alert("Error please see console ");
             }
+            sessionStorage.removeItem("api_CloudBoltToken");
+            navigate("/login");
         }
 
 
@@ -144,24 +123,19 @@ const InputForm = () => {
     return (
         <>
 
-
-            <div style={{ display: 'flex', flexDirection: 'column', minHeight: '100vh' }}>
-                <MDBNavbar style={{ backgroundColor: 'rgba(51, 81, 119, 1)' }}>
+            <div style={{ display: 'flex', flexDirection: 'column', minHeight: '100vh', margin: '0 auto' }}>
+                <MDBNavbar style={{ backgroundColor: 'rgba(51, 81, 119, 1)', margin: '0' }}>
                     <MDBContainer fluid>
                         <MDBNavbarBrand href='#'>
                             <img
-                                className=""
-                                //src='images/Medidata_Logo_white.png'
                                 src='https://mdsol.github.io/medidata_design_system/static/media/Medidata_Logo_white.169a9612.png'
                                 height='25'
                                 alt=''
                                 loading='lazy'
                             />
                         </MDBNavbarBrand>
-                        <h2 className="fw-bolder mx-auto my-auto text-white">TS - URL Deployment Tool</h2>
-                        <div> <h4 className="text-white">{`${formatTime(minutes)} : ${formatTime(remainingSeconds)}`}</h4> </div>
-
                         <MDBNavbarItem className="d-flex align-items-center">
+                            <div> <h4 className="text-white my-auto" style={{ marginRight: '0px' }}>{`${formatTime(minutes)} : ${formatTime(remainingSeconds)}`}</h4> </div>
                             <MDBDropdown>
                                 <MDBDropdownToggle tag='a' className='nav-link' role='button'>
                                     <MDBIcon className="text-light" fas icon="user-alt" size='lg' />
@@ -171,44 +145,51 @@ const InputForm = () => {
                                 </MDBDropdownMenu>
                             </MDBDropdown>
                         </MDBNavbarItem>
-
                     </MDBContainer>
                 </MDBNavbar>
 
-                <div style={{ display: 'flex', flexDirection: 'column', justifyContent: 'space-between', flex: 1 }}>
-                    <MDBContainer fluid className="d-flex align-items-center justify-content-center flex-grow-1">
-                        <MDBCard className='p-5 shadow-5' style={{ width: '40%', background: 'hsla(0, 0%, 100%, 0.8)', backdropFilter: 'blur(30px)', marginTop: '5%', marginBottom: '5%' }}>
-                            <MDBCardBody className='p-1 text-center'>
+                <div style={{ display: 'flex', flexDirection: 'column', justifyContent: 'space-between', flex: 1, margin: '0' }}>
+                    <MDBContainer fluid className="d-flex align-items-center justify-content-center flex-grow-1" style={{ margin: '0' }}>
+                        <MDBCard className='p-5 shadow-5' style={{ width: '40%', background: 'hsla(0, 0%, 100%, 0.8)', backdropFilter: 'blur(30px)', margin: '0' }}>
+                            <h2 className="fw-bold text-center">TS - URL Deployment Tool</h2>
+                            <MDBCardBody className='p-1 '>
 
-                                <MDBInput wrapperClass='mb-4' label='Order ID' id='orderId' type='text' size='lg'
+                                <MDBInput wrapperClass='mb-3 mt-3' label='Order ID' id='orderId' type='text' size='lg'
                                     onChange={(e) => setOrderId(e.target.value)}
                                     required
-                                    validate
                                 />
-                                <div className="d-flex justify-content-center text-start">
+                                <h5 className="mb-2 " >Select App</h5>
+                                <div className="d-flex  text-start">
 
-                                    <div >
+                                    <div className=" " style={{ minWidth: '40%' }}>
                                         <MDBCheckbox name='raveLegacyOption' id='raveLegacyOption' value='raveLegacy' label='Rave Legacy'
                                             checked={raveLegacyOption}
                                             onChange={handleRaveLegacyOption}
                                         />
+                                    </div>
+                                    <div className=" " style={{ minWidth: '40%' }}>
+                                        <MDBCheckbox name='raveOption' id='raveOption' value='raveOption' label='Rave'
+                                            checked={raveOption}
+                                            onChange={handelRaveOption} />
+                                    </div>
+                                </div>
+                                <h5 className="mt-2 mb-2">Select its corresponding version</h5>
+                                <div className="d-flex text-start">
+                                    <div style={{ minWidth: '40%' }}>
                                         <MDBCheckbox name='classicOption' id='classicOption' value='classicOption' label='Classic'
                                             checked={classicOption}
                                             onChange={handleClasssicOption}
                                         />
                                     </div>
-                                    <br />
-                                    <div style={{ marginLeft: "30px" }}>
-                                        <MDBCheckbox name='raveOption' id='raveOption' value='raveOption' label='Rave'
-                                            checked={raveOption}
-                                            onChange={handelRaveOption} />
+                                    <div style={{ minWidth: '40%' }}>
                                         <MDBCheckbox name='remoraOption' id='remoraOption' value='remoraOption' label='Remora'
                                             checked={remoraOption}
-                                            onChange={handelRemoraOption} />
+                                            onChange={handelRemoraOption}
+                                        />
                                     </div>
                                 </div>
                                 {raveLegacyOption && (
-                                    <MDBInput wrapperClass='mb-4' label='Product Version' id='productVersion' type='text' size='lg'
+                                    <MDBInput wrapperClass='mb-4 mt-3' label='Product Version' id='productVersion' type='text' size='lg'
                                         value={productVersion}
                                         onChange={(e) => setProductVersion(e.target.value)}
                                         required
@@ -216,7 +197,7 @@ const InputForm = () => {
                                 )
 
                                 }
-                                <MDBInput wrapperClass='mb-4' label='DB Server' id='DBServer' type='text' size='lg'
+                                <MDBInput wrapperClass='mb-4 mt-3' label='DB Server' id='DBServer' type='text' size='lg'
                                     value={DBServer}
                                     onChange={(e) => setDBServer(e.target.value)}
                                     required
@@ -233,8 +214,8 @@ const InputForm = () => {
                         </MDBCard>
                     </MDBContainer>
 
-                    <MDBFooter className="">
-                        <div className='text-center p-3' style={{ backgroundColor: 'rgba(0, 0, 0, 0.05)' }}>
+                    <MDBFooter style={{ margin: '0' }}>
+                        <div className='text-center p-1 ' style={{ backgroundColor: 'rgba(0, 0, 0, 0.05)', 'fontSize': '12px' }}>
                             <a href="http://medidata.com">
                                 Medidata Solutions, Inc., a Dassault Systèmes company<br />
                             </a>

@@ -75,13 +75,15 @@ const Login = () => {
                 console.log(error.response);
                 if (error.response.status == 400) {
                     alert("Server responded : Wrong user Credentials");
-                    isLoading = false;
+                    setIsLoading(false);
                 }
             } else if (error.request) {
                 alert("network error");
+                setIsLoading(false);
             } else {
                 console.log(error);
                 alert("Error please see console ");
+                setIsLoading(false);
             }
 
         }
