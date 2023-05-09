@@ -1,6 +1,7 @@
 import React from "react";
 import { useNavigate } from 'react-router-dom';
-
+import medidataLogo from "../assets/Medidata_Logo_white.png";
+import successLogo from "../assets/success.gif"
 import {
     MDBBtn,
     MDBContainer,
@@ -18,6 +19,7 @@ import {
 const Success = () => {
     const navigate = useNavigate();
     const handleSubmit = () => {
+        sessionStorage.removeItem("api_CloudBoltToken");
         navigate('/');
     };
 
@@ -28,8 +30,7 @@ const Success = () => {
                     <MDBContainer fluid>
                         <MDBNavbarBrand href='#'>
                             <img
-                                // src={require('./Medidata_Logo_white.png')}
-                                src='https://mdsol.github.io/medidata_design_system/static/media/Medidata_Logo_white.169a9612.png'
+                                src={medidataLogo}
                                 height='25'
                                 alt=''
                                 loading='lazy'
@@ -41,10 +42,10 @@ const Success = () => {
 
                 <div style={{ display: 'flex', flexDirection: 'column', justifyContent: 'space-between', flex: 1 }}>
                     <MDBContainer fluid className="d-flex align-items-center justify-content-center flex-grow-1">
-                        <MDBCard className='p-5 shadow-5' style={{ width: '40%', background: 'hsla(0, 0%, 100%, 0.8)', backdropFilter: 'blur(30px)', marginTop: '5%', marginBottom: '5%' }}>
+                        <MDBCard className='p-5 shadow-9' style={{ width: '40%', background: 'hsla(0, 0%, 100%, 0.8)', backdropFilter: 'blur(30px)', marginTop: '5%', marginBottom: '5%' }} id="Fcard">
                             <MDBCardBody className='p-1 text-center'>
                                 <MDBCardTitle className="text-center"><h2 className="fw-bold">TS - URL Deployment Tool</h2></MDBCardTitle>
-                                <img height='120px' src='https://cliply.co/wp-content/uploads/2021/03/372103860_CHECK_MARK_400px.gif'></img>
+                                <img height='120px' src={successLogo}></img>
                                 <MDBCardSubTitle className="text-center mb-4 py-3" style={{ color: 'green' }}><h4 className="fw-bold">Congratulation!! </h4></MDBCardSubTitle>
                                 <MDBCardText className="text-center "> Your OrderID: with this Template: has been successfully created.</MDBCardText>
 

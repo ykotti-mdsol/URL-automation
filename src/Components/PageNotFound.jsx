@@ -1,6 +1,7 @@
 import React from "react";
 import { useNavigate } from 'react-router-dom';
-
+import MedidataLogo from "../assets/Medidata_Logo_white.png";
+import pageNotFoundLogo from "../assets/pageNotFound.webp"
 import {
     MDBBtn,
     MDBContainer,
@@ -29,8 +30,7 @@ const PageNotFound = () => {
                     <MDBContainer fluid>
                         <MDBNavbarBrand href='#'>
                             <img
-                                // src={require('./Medidata_Logo_white.png')}
-                                src='https://mdsol.github.io/medidata_design_system/static/media/Medidata_Logo_white.169a9612.png'
+                                src={MedidataLogo}
                                 height='25'
                                 alt=''
                                 loading='lazy'
@@ -49,7 +49,7 @@ const PageNotFound = () => {
                                 <MDBCardTitle className="text-center"><h2 className="fw-bold">TS - URL Deployment Tool</h2></MDBCardTitle>
 
                                 <MDBCardSubTitle className="text-center mb-4 py-2" style={{ color: 'red' }}><h4 className="fw-bold"> Oops Error!</h4></MDBCardSubTitle>
-                                <img height="180px" src="https://static.vecteezy.com/system/resources/previews/007/162/540/original/error-404-page-not-found-concept-illustration-web-page-error-creative-design-modern-graphic-element-for-landing-page-infographic-icon-free-vector.jpg" />
+                                <img height="180px" src={pageNotFoundLogo} />
                                 <MDBCardText className="text-center py-3" ><h4> Page  Not Found.</h4></MDBCardText>
 
                                 <MDBBtn className='  mt-3' size='lg' onClick={handleSubmit} >Login</MDBBtn>

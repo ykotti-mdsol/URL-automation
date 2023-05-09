@@ -1,7 +1,8 @@
 import React, { useEffect, useState } from "react";
 import axios from 'axios';
-// import logo from "./Medidata_Logo_white.png";
-// src\images\Medidata_Logo_white.png
+import medidataLogo from "../assets/Medidata_Logo_white.png";
+import loginLogo from "../assets/login.jpg";
+// import "./Login.css";
 import {
     MDBBtn,
     MDBContainer,
@@ -12,6 +13,8 @@ import {
     MDBNavbar,
     MDBNavbarBrand,
     MDBSpinner,
+    MDBValidationItem,
+    MDBValidation
 }
     from 'mdb-react-ui-kit';
 
@@ -42,15 +45,27 @@ const Login = () => {
                 navigate("/inputform");
             }
             else {
+                sessionStorage.removeItem("api_CloudBoltToken");
                 navigate("/");
+                setIsLoading(false);
             }
         }
     }, [cloudBoltToken]);
 
+    const onChangeUserName = (event)=>{
+        setUsername(event.target.value);
+       
+    }
+    
     const handleSubmit = async (event) => {
+        if(!username || !password){
+            console.log("User pass not written");
+            return;
+        }
+        // setIsValid(true);
         setIsLoading(true);
         event.preventDefault();
-        console.log(`${username} ${password}`);
+        
         try {
 
             const cloudBoltApiUrl = 'https://hdcgreeniaas.lab1.hdc.mdsol.com/api/v3/cmp/apiToken/';
@@ -98,10 +113,9 @@ const Login = () => {
                     <MDBContainer fluid>
                         <MDBNavbarBrand href='#'>
                             <img
-                                // src={require('./Medidata_Logo_white.png')}
-                                src='https://mdsol.github.io/medidata_design_system/static/media/Medidata_Logo_white.169a9612.png'
+                                src={medidataLogo}
                                 height='25'
-                                alt=''
+                                alt='Medidata Logo'
                                 loading='lazy'
                             />
                         </MDBNavbarBrand>
@@ -110,27 +124,50 @@ const Login = () => {
 
                 <div style={{ display: 'flex', flexDirection: 'column', justifyContent: 'space-between', flex: 1, margin: '0' }}>
                     <MDBContainer fluid className="d-flex align-items-center justify-content-center flex-grow-1" style={{ margin: '0' }}>
-                        <MDBCard className='p-5 shadow-5' style={{ width: '40%', background: 'hsla(0, 0%, 100%, 0.8)', backdropFilter: 'blur(30px)', margin: '0' }}>
+                        <MDBCard className='p-5 shadow-9' style={{ width: '40%', background: 'hsla(0, 0%, 100%, 0.8)', margin: '0' }} id="Fcard">
                             <h2 className="fw-bold text-center">TS - URL Deployment Tool</h2>
                             <MDBCardBody className='p-1 text-center'>
-                                <h4 className="fw-bold mb-4 mt-2">Welcome</h4>
-                                <MDBInput wrapperClass=' mt-2' label='Lab Username' id='username' type='text'
-                                    value={username}
-                                    onChange={(event) => setUsername(event.target.value)}
-                                    required />
-                                <MDBInput wrapperClass='mb-4 mt-4' label='Password' id='password' type='password'
-                                    value={password}
-                                    onChange={(event) => setPassword(event.target.value)}
-                                    required
+                                <img
+                                    src={loginLogo}
+                                    className="p-1"
+                                    object-fit='contain'
+                                    height='80'
+                                    alt='Login Logo'
+                                    loading='lazy'
                                 />
-                                {isLoading ? (
-                                    <MDBBtn disabled className='w-100  mt-3' size='lg'>
-                                        <MDBSpinner grow size='sm' role='status' tag='span' className='me-2' />
-                                        Loading...
-                                    </MDBBtn>
-                                ) : (
-                                    <MDBBtn className='w-100  mt-3' size='lg' onClick={handleSubmit}>LOGIN IN</MDBBtn>
-                                )}
+
+                                    <MDBValidation  className='row g-3' >
+                                        <MDBValidationItem className=''  feedback='' invalid >
+                                            <MDBInput wrapperClass={`mt-2 `}  label='Lab Username' id='username' type='text'
+                                                value={username}
+                                                onChange={onChangeUserName}
+                                                // onBlur={handleUsernameBlur}
+                                                required
+                                                className="LabUser"
+
+                                            />
+                                        </MDBValidationItem>
+                                        <MDBValidationItem className='' feedback='' invalid>
+                                            <MDBInput wrapperClass='mb-4' label='Password' id='password' type='password'
+                                                value={password}
+                                                onChange={(event) => setPassword(event.target.value)}
+                                                required
+
+                                            />
+                                        </MDBValidationItem>
+                                        {/* {isEmpty ? ( <MDBBtn disabled className='w-100  mt-3' size='lg' onClick={handleSubmit}>LOGIN IN</MDBBtn>) :  */}
+                                        {isLoading ? (
+                                            <MDBBtn disabled className='w-100  mt-3' size='lg'>
+                                                <MDBSpinner grow size='sm' role='status' tag='span' className='me-2' />
+                                                Loading...
+                                            </MDBBtn>
+                                        ) : (
+                                            <MDBBtn className='w-100  mt-3' size='lg' onClick={handleSubmit}>LOGIN</MDBBtn>
+                                        )}
+
+                                    </MDBValidation>
+
+
                             </MDBCardBody>
                         </MDBCard>
                     </MDBContainer>

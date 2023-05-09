@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import './InputForm.css';
 import axios from "axios";
+import medidataLogo from "../assets/Medidata_Logo_white.png";
 import {
     MDBBtn,
     MDBContainer,
@@ -18,6 +19,8 @@ import {
     MDBDropdownItem,
     MDBSpinner,
     MDBNavbarItem,
+    MDBValidation,
+    MDBValidationItem
 }
     from 'mdb-react-ui-kit';
 import { useNavigate } from "react-router-dom";
@@ -34,10 +37,13 @@ const InputForm = () => {
     const [classicOption, setClassicOption] = useState(false);
     const [remoraOption, setRemoraOption] = useState(false);
     const [isLoading, setIsLoading] = useState(false);
-    const [seconds, setseconds] = useState(60000);
+    const [seconds, setseconds] = useState(6000);
     const apiCloudBoltToken = sessionStorage.getItem("api_CloudBoltToken");
+    // const [isValid, setIsValid] = useState(false);
     const navigate = useNavigate();
-
+    // if(!sessionStorage.getItem("api_CloudBoltToken")){
+    //     navigate("/login");
+    // }
     useEffect(() => {
         let interval = null;
         if (seconds > 0) {
@@ -48,7 +54,6 @@ const InputForm = () => {
             clearInterval(interval);
             alert("Session expired");
             sessionStorage.removeItem("api_CloudBoltToken");
-            sessionStorage.removeItem("api_FalconToken");
             navigate("/");
         }
         return () => clearInterval(interval);
@@ -75,8 +80,19 @@ const InputForm = () => {
         setRemoraOption(true);
         setClassicOption(false);
     };
+    const handelLogOut = () => {
+        sessionStorage.removeItem("api_CloudBoltToken");
+        navigate("/login");
+    }
+
     const handleSubmit = async (e) => {
         e.preventDefault();
+        if(!orderId || !DBServer || ( !(raveLegacyOption && productVersion) && !(!raveLegacyOption && !productVersion)) 
+           || !(raveLegacyOption || raveOption) || !(classicOption || remoraOption)
+        ){
+            console.log("Required some fields");
+            return;
+        }
         setIsLoading(true);
         console.log(`${orderId} ${productVersion} ${DBServer}`);
         console.log(`classic : ${classicOption}`);
@@ -128,7 +144,7 @@ const InputForm = () => {
                     <MDBContainer fluid>
                         <MDBNavbarBrand href='#'>
                             <img
-                                src='https://mdsol.github.io/medidata_design_system/static/media/Medidata_Logo_white.169a9612.png'
+                                src={medidataLogo}
                                 height='25'
                                 alt=''
                                 loading='lazy'
@@ -141,7 +157,7 @@ const InputForm = () => {
                                     <MDBIcon className="text-light" fas icon="user-alt" size='lg' />
                                 </MDBDropdownToggle>
                                 <MDBDropdownMenu>
-                                    <MDBDropdownItem link href="/login" >Log Out</MDBDropdownItem>
+                                    <MDBDropdownItem link onClick={handelLogOut} >Log Out</MDBDropdownItem>
                                 </MDBDropdownMenu>
                             </MDBDropdown>
                         </MDBNavbarItem>
@@ -150,66 +166,86 @@ const InputForm = () => {
 
                 <div style={{ display: 'flex', flexDirection: 'column', justifyContent: 'space-between', flex: 1, margin: '0' }}>
                     <MDBContainer fluid className="d-flex align-items-center justify-content-center flex-grow-1" style={{ margin: '0' }}>
-                        <MDBCard className='p-5 shadow-5' style={{ width: '40%', background: 'hsla(0, 0%, 100%, 0.8)', backdropFilter: 'blur(30px)', margin: '0' }}>
+
+                        <MDBCard className='p-5 shadow-9' style={{ width: '40%', background: 'hsla(0, 0%, 100%, 0.8)', margin: '0' }} id="Fcard">
                             <h2 className="fw-bold text-center">TS - URL Deployment Tool</h2>
+
                             <MDBCardBody className='p-1 '>
 
-                                <MDBInput wrapperClass='mb-3 mt-3' label='Order ID' id='orderId' type='text' size='lg'
-                                    onChange={(e) => setOrderId(e.target.value)}
-                                    required
-                                />
-                                <h5 className="mb-2 " >Select App</h5>
-                                <div className="d-flex  text-start">
+                                <MDBValidation className='row g-3' >
+                                    <MDBValidationItem className='' feedback=''  >
+                                        <MDBInput wrapperClass='mt-4 mb-1' label='Order ID' id='orderId' type='text' size='lg'
+                                            onChange={(e) => setOrderId(e.target.value)}
+                                            required
+                                        />
+                                    </MDBValidationItem>
+                                    <h5 className=" fw-bold mt-3
+                                     mb-0" >Select App</h5>
+                                    {/* <MDBValidationItem className='' feedback=''  > */}
+                                    <div className="d-flex  text-start mt-2">
 
-                                    <div className=" " style={{ minWidth: '40%' }}>
-                                        <MDBCheckbox name='raveLegacyOption' id='raveLegacyOption' value='raveLegacy' label='Rave Legacy'
-                                            checked={raveLegacyOption}
-                                            onChange={handleRaveLegacyOption}
-                                        />
+                                        <div className=" " style={{ minWidth: '40%' }}>
+                                            <MDBCheckbox name='raveLegacyOption' id='raveLegacyOption' value='raveLegacy' label='Rave Legacy'
+                                                checked={raveLegacyOption}
+                                                onChange={handleRaveLegacyOption}
+                                                
+                                            />
+                                        </div>
+                                        <div className=" " style={{ minWidth: '40%' }}>
+                                            <MDBCheckbox name='raveOption' id='raveOption' value='raveOption' label='Rave'
+                                                checked={raveOption}
+                                                onChange={handelRaveOption} 
+                                                    
+                                                />
+                                        </div>
                                     </div>
-                                    <div className=" " style={{ minWidth: '40%' }}>
-                                        <MDBCheckbox name='raveOption' id='raveOption' value='raveOption' label='Rave'
-                                            checked={raveOption}
-                                            onChange={handelRaveOption} />
+                                    {/* </MDBValidationItem> */}
+                                    <h5 className="mt-2 mb-0 fw-bold">Select its corresponding version</h5>
+                                    {/* <MDBValidationItem className='' feedback=''  > */}
+                                    <div className="d-flex text-start mt-2 " >
+                                        <div style={{ minWidth: '40%' }}>
+                                            <MDBCheckbox name='classicOption' id='classicOption' value='classicOption' label='Classic'
+                                                checked={classicOption}
+                                                onChange={handleClasssicOption}
+                                                
+                                            />
+                                        </div>
+                                        <div style={{ minWidth: '40%' }}>
+                                            <MDBCheckbox name='remoraOption' id='remoraOption' value='remoraOption' label='Remora'
+                                                checked={remoraOption}
+                                                onChange={handelRemoraOption}
+                                                
+                                            />
+                                        </div>
                                     </div>
-                                </div>
-                                <h5 className="mt-2 mb-2">Select its corresponding version</h5>
-                                <div className="d-flex text-start">
-                                    <div style={{ minWidth: '40%' }}>
-                                        <MDBCheckbox name='classicOption' id='classicOption' value='classicOption' label='Classic'
-                                            checked={classicOption}
-                                            onChange={handleClasssicOption}
-                                        />
-                                    </div>
-                                    <div style={{ minWidth: '40%' }}>
-                                        <MDBCheckbox name='remoraOption' id='remoraOption' value='remoraOption' label='Remora'
-                                            checked={remoraOption}
-                                            onChange={handelRemoraOption}
-                                        />
-                                    </div>
-                                </div>
-                                {raveLegacyOption && (
-                                    <MDBInput wrapperClass='mb-4 mt-3' label='Product Version' id='productVersion' type='text' size='lg'
-                                        value={productVersion}
-                                        onChange={(e) => setProductVersion(e.target.value)}
-                                        required
-                                    />
-                                )
+                                    {/* </MDBValidationItem> */}
+                                    {raveLegacyOption && (
+                                        <MDBValidationItem className='' feedback='' invalid>
+                                            <MDBInput wrapperClass='mt-1' label='Product Version' id='productVersion' type='text' size='lg'
+                                                value={productVersion}
+                                                onChange={(e) => setProductVersion(e.target.value)}
+                                                required
+                                            />
+                                        </MDBValidationItem>
 
-                                }
-                                <MDBInput wrapperClass='mb-4 mt-3' label='DB Server' id='DBServer' type='text' size='lg'
-                                    value={DBServer}
-                                    onChange={(e) => setDBServer(e.target.value)}
-                                    required
-                                />
-                                {isLoading ? (
-                                    <MDBBtn disabled className='w-100  mt-3' size='lg'>
-                                        <MDBSpinner grow size='sm' role='status' tag='span' className='me-2' />
-                                        Loading...
-                                    </MDBBtn>
-                                ) : (
-                                    <MDBBtn className='w-100  mt-3' size='lg' onClick={handleSubmit}>Submit</MDBBtn>
-                                )}
+                                    )}
+                                    <MDBValidationItem className='' feedback='' invalid >
+                                        <MDBInput wrapperClass=' mt-2 mb-4' label='DB Server' id='DBServer' type='text' size='lg'
+                                            value={DBServer}
+                                            onChange={(e) => setDBServer(e.target.value)}
+                                            required
+                                        />
+                                    </MDBValidationItem>
+
+                                    {isLoading ? (
+                                        <MDBBtn disabled className='w-100  mt-3' size='lg'>
+                                            <MDBSpinner grow size='sm' role='status' tag='span' className='me-2' />
+                                            Loading...
+                                        </MDBBtn>
+                                    ) : (
+                                        <MDBBtn className='w-100  mt-3' size='lg' onClick={handleSubmit}>Submit</MDBBtn>
+                                    )}
+                                </MDBValidation>
                             </MDBCardBody>
                         </MDBCard>
                     </MDBContainer>
