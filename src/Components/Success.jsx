@@ -10,8 +10,6 @@ import {
     MDBFooter,
     MDBNavbar,
     MDBNavbarBrand,
-    MDBCardTitle,
-    MDBCardSubTitle,
     MDBCardText
 }
     from 'mdb-react-ui-kit';
@@ -36,20 +34,18 @@ const Success = () => {
                                 loading='lazy'
                             />
                         </MDBNavbarBrand>
-
                     </MDBContainer>
                 </MDBNavbar>
 
                 <div style={{ display: 'flex', flexDirection: 'column', justifyContent: 'space-between', flex: 1 }}>
                     <MDBContainer fluid className="d-flex align-items-center justify-content-center flex-grow-1">
-                        <MDBCard className='p-5 shadow-9' style={{ width: '40%', background: 'hsla(0, 0%, 100%, 0.8)', backdropFilter: 'blur(30px)', marginTop: '5%', marginBottom: '5%' }} id="Fcard">
+                        <MDBCard className='p-5 shadow-9' style={{ width: '40%', background: 'hsla(0, 0%, 100%, 0.8)', margin: '0' }} id="Fcard">
+                            <h2 className="fw-bold text-center">TS - URL Deployment Tool </h2>
                             <MDBCardBody className='p-1 text-center'>
-                                <MDBCardTitle className="text-center"><h2 className="fw-bold">TS - URL Deployment Tool</h2></MDBCardTitle>
-                                <img height='120px' src={successLogo}></img>
-                                <MDBCardSubTitle className="text-center mb-4 py-3" style={{ color: 'green' }}><h4 className="fw-bold">Congratulation!! </h4></MDBCardSubTitle>
-                                <MDBCardText className="text-center "> Your OrderID: with this Template: has been successfully created.</MDBCardText>
-
-                                <MDBBtn className='  mt-3' size='lg' onClick={handleSubmit} >Create  new</MDBBtn>
+                                <img style={{ maxWidth: "100%", width: "20%", height: "auto" }} src={successLogo}></img>
+                                <h4 className="text-center mb-4 py-3 fw-bold" style={{ color: 'green' }}>Congratulation!! </h4>
+                                <MDBCardText className="text-center"> Your OrderID: with this Template: has been successfully created.</MDBCardText>
+                                <MDBBtn className='mt-3' size='lg' onClick={handleSubmit} >Create  new</MDBBtn>
                             </MDBCardBody>
                         </MDBCard>
                     </MDBContainer>

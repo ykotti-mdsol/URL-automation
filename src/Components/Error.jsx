@@ -10,15 +10,13 @@ import {
     MDBFooter,
     MDBNavbar,
     MDBNavbarBrand,
-    MDBCardTitle,
     MDBCardSubTitle,
     MDBCardText
 }
     from 'mdb-react-ui-kit';
 
-
 const Error = () => {
-    const navigate = useNavigate();
+    let navigate = useNavigate();
     const handleSubmit = () => {
         sessionStorage.removeItem("api_CloudBoltToken");
         navigate('/');
@@ -43,16 +41,13 @@ const Error = () => {
                 </MDBNavbar>
 
                 <div style={{ display: 'flex', flexDirection: 'column', justifyContent: 'space-between', flex: 1 }}>
-
                     <MDBContainer fluid className="d-flex align-items-center justify-content-center flex-grow-1">
-
                         <MDBCard className='p-5 shadow-9' style={{ width: '40%', background: 'hsla(0, 0%, 100%, 0.8)', backdropFilter: 'blur(30px)', marginTop: '5%', marginBottom: '5%' }} id="Fcard">
+                            <h2 className="fw-bold text-center">TS - URL Deployment Tool </h2>
                             <MDBCardBody className='p-1 text-center'>
-                                <MDBCardTitle className="text-center"><h2 className="fw-bold">TS - URL Deployment Tool</h2></MDBCardTitle>
-                                <img height="120" src={errorLogo} />
-                                <MDBCardSubTitle className="text-center mb-4 py-3" style={{ color: 'red' }}><h4 className="fw-bold"> Oops Error!</h4></MDBCardSubTitle>
+                                <img style={{ maxWidth: "100%", width: "20%", height: "auto" }}src={errorLogo} />
+                                <h3 className="text-center mb-4 py-3 fw-bold " style={{ color: 'red' }}>Oops Error!</h3>
                                 <MDBCardText className="text-center ">Sorry!!  Your OrderID: with this Template: is not created.</MDBCardText>
-
                                 <MDBBtn className='  mt-3' size='lg' onClick={handleSubmit} >Try Again</MDBBtn>
                             </MDBCardBody>
                         </MDBCard>

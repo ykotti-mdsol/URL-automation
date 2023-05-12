@@ -2,7 +2,6 @@ import React, { useEffect, useState } from "react";
 import axios from 'axios';
 import medidataLogo from "../assets/Medidata_Logo_white.png";
 import loginLogo from "../assets/login.jpg";
-// import "./Login.css";
 import {
     MDBBtn,
     MDBContainer,
@@ -13,8 +12,7 @@ import {
     MDBNavbar,
     MDBNavbarBrand,
     MDBSpinner,
-    MDBValidationItem,
-    MDBValidation
+    MDBIcon,
 }
     from 'mdb-react-ui-kit';
 
@@ -26,48 +24,35 @@ const Login = () => {
     const [password, setPassword] = useState("");
     const [cloudBoltToken, setCloudBoltToken] = useState(sessionStorage.getItem("api_CloudBoltToken"));
     const [isLoading, setIsLoading] = useState(false);
-    const navigate = useNavigate();
+    const [isVisible, setIsVisible] = useState(false);
+    let navigate = useNavigate();
     var temp = "";
     const urlHeaderData = new Headers();
-
     urlHeaderData.append('Content-Type', 'application/json');
     urlHeaderData.append('Accept', 'application/json');
 
-
-
     useEffect(() => {
-        console.log('cloudBoltToken changed:', cloudBoltToken);
         if (cloudBoltToken) {
-            console.log("Succesfully redirect karo");
             if (!sessionStorage.getItem("api_CloudBoltToken")) {
                 sessionStorage.setItem("api_CloudBoltToken", cloudBoltToken);
-                console.log(sessionStorage.getItem("api_CloudBoltToken"));
                 navigate("/inputform");
             }
             else {
                 sessionStorage.removeItem("api_CloudBoltToken");
-                navigate("/");
+                navigate("/login");
                 setIsLoading(false);
             }
         }
     }, [cloudBoltToken]);
 
-    const onChangeUserName = (event)=>{
-        setUsername(event.target.value);
-       
-    }
-    
     const handleSubmit = async (event) => {
-        if(!username || !password){
+        if (!username || !password) {
             console.log("User pass not written");
             return;
         }
-        // setIsValid(true);
         setIsLoading(true);
         event.preventDefault();
-        
         try {
-
             const cloudBoltApiUrl = 'https://hdcgreeniaas.lab1.hdc.mdsol.com/api/v3/cmp/apiToken/';
             const cloudBoltResponse = await axios.post(cloudBoltApiUrl, {
                 "username": username,
@@ -80,14 +65,12 @@ const Login = () => {
                     "Accept": "*/*"
                 }
             });
-            console.log(cloudBoltResponse);
             temp = cloudBoltResponse.data.token;
             setCloudBoltToken(temp);
 
         }
         catch (error) {
             if (error.response) {
-                console.log(error.response);
                 if (error.response.status == 400) {
                     alert("Server responded : Wrong user Credentials");
                     setIsLoading(false);
@@ -100,12 +83,13 @@ const Login = () => {
                 alert("Error please see console ");
                 setIsLoading(false);
             }
-
         }
-
     }
-    return (
+    const handleVisible = () => {
+        setIsVisible(!isVisible);
+    }
 
+    return (
 
         <>
             <div style={{ display: 'flex', flexDirection: 'column', minHeight: '100vh', margin: '0 auto' }}>
@@ -126,7 +110,7 @@ const Login = () => {
                     <MDBContainer fluid className="d-flex align-items-center justify-content-center flex-grow-1" style={{ margin: '0' }}>
                         <MDBCard className='p-5 shadow-9' style={{ width: '40%', background: 'hsla(0, 0%, 100%, 0.8)', margin: '0' }} id="Fcard">
                             <h2 className="fw-bold text-center">TS - URL Deployment Tool</h2>
-                            <MDBCardBody className='p-1 text-center'>
+                            <MDBCardBody className='p-1 text-center mt-2'>
                                 <img
                                     src={loginLogo}
                                     className="p-1"
@@ -136,37 +120,35 @@ const Login = () => {
                                     loading='lazy'
                                 />
 
-                                    <MDBValidation  className='row g-3' >
-                                        <MDBValidationItem className=''  feedback='' invalid >
-                                            <MDBInput wrapperClass={`mt-2 `}  label='Lab Username' id='username' type='text'
-                                                value={username}
-                                                onChange={onChangeUserName}
-                                                // onBlur={handleUsernameBlur}
-                                                required
-                                                className="LabUser"
-
-                                            />
-                                        </MDBValidationItem>
-                                        <MDBValidationItem className='' feedback='' invalid>
-                                            <MDBInput wrapperClass='mb-4' label='Password' id='password' type='password'
-                                                value={password}
-                                                onChange={(event) => setPassword(event.target.value)}
-                                                required
-
-                                            />
-                                        </MDBValidationItem>
-                                        {/* {isEmpty ? ( <MDBBtn disabled className='w-100  mt-3' size='lg' onClick={handleSubmit}>LOGIN IN</MDBBtn>) :  */}
-                                        {isLoading ? (
-                                            <MDBBtn disabled className='w-100  mt-3' size='lg'>
-                                                <MDBSpinner grow size='sm' role='status' tag='span' className='me-2' />
-                                                Loading...
-                                            </MDBBtn>
-                                        ) : (
-                                            <MDBBtn className='w-100  mt-3' size='lg' onClick={handleSubmit}>LOGIN</MDBBtn>
-                                        )}
-
-                                    </MDBValidation>
-
+                                <form >
+                                    <div className="mt-4">
+                                        <MDBInput label='Lab Username' id='username' type='text'
+                                            value={username}
+                                            onChange={(event) => setUsername(event.target.value)}
+                                            required
+                                        />
+                                        <div className="d-flex align-items-center mt-4 mb-4">
+                                            <div className="flex-grow-1">
+                                                <MDBInput label="Password" type={isVisible ? "text" : "password"}
+                                                    className="flex-grow-1 mr-2"
+                                                    value={password}
+                                                    onChange={(event) => setPassword(event.target.value)}
+                                                    required
+                                                />
+                                            </div>
+                                            <MDBBtn onClick={(e)=>{e.preventDefault(); handleVisible();}}>
+                                                {isVisible ? (<MDBIcon fas icon="eye" />) : (<MDBIcon fas icon="eye-slash" />)}</MDBBtn>
+                                        </div>
+                                    </div>
+                                    {isLoading ? (
+                                        <MDBBtn disabled className='w-100  mt-3' size='lg'>
+                                            <MDBSpinner grow size='sm' role='status' tag='span' className='me-2' />
+                                            Loading...
+                                        </MDBBtn>
+                                    ) : (
+                                        <MDBBtn className='w-100  mt-3' size='lg' onClick={handleSubmit}>LOGIN</MDBBtn>
+                                    )}
+                                </form>
 
                             </MDBCardBody>
                         </MDBCard>
@@ -184,8 +166,9 @@ const Login = () => {
                             Copyright © 1999-2023
                         </div>
                     </MDBFooter>
+
                 </div>
-            </div>
+            </div >
 
         </>
     );

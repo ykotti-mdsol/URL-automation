@@ -10,6 +10,7 @@ import "@fortawesome/fontawesome-free/css/all.min.css";
 import './index.css'
 import PageNotFound from './Components/PageNotFound';
 import Success from './Components/Success';
+
 ReactDOM.createRoot(document.getElementById('root')).render(
 
   <React.StrictMode>

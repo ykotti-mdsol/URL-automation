@@ -10,15 +10,12 @@ import {
     MDBFooter,
     MDBNavbar,
     MDBNavbarBrand,
-    MDBCardTitle,
-    MDBCardSubTitle,
-    MDBCardText
 }
     from 'mdb-react-ui-kit';
 
 const PageNotFound = () => {
 
-    const navigate = useNavigate();
+    let navigate = useNavigate();
     const handleSubmit = () => {
         navigate('/');
     };
@@ -26,6 +23,7 @@ const PageNotFound = () => {
     return (
         <>
             <div style={{ display: 'flex', flexDirection: 'column', minHeight: '100vh' }}>
+
                 <MDBNavbar className=" " style={{ backgroundColor: 'rgba(51, 81, 119, 1)' }}>
                     <MDBContainer fluid>
                         <MDBNavbarBrand href='#'>
@@ -36,26 +34,19 @@ const PageNotFound = () => {
                                 loading='lazy'
                             />
                         </MDBNavbarBrand>
-
                     </MDBContainer>
                 </MDBNavbar>
 
                 <div style={{ display: 'flex', flexDirection: 'column', justifyContent: 'space-between', flex: 1 }}>
                     <MDBContainer fluid className="d-flex align-items-center justify-content-center flex-grow-1">
-
                         <MDBCard className='p-5 shadow-5' style={{ width: '45%', background: 'hsla(0, 0%, 100%, 0.8)', backdropFilter: 'blur(30px)', marginTop: '5%', marginBottom: '5%' }}>
-
+                            <h2 className="fw-bold text-center">TS - URL Deployment Tool </h2>
                             <MDBCardBody className='p-1 text-center'>
-                                <MDBCardTitle className="text-center"><h2 className="fw-bold">TS - URL Deployment Tool</h2></MDBCardTitle>
-
-                                <MDBCardSubTitle className="text-center mb-4 py-2" style={{ color: 'red' }}><h4 className="fw-bold"> Oops Error!</h4></MDBCardSubTitle>
-                                <img height="180px" src={pageNotFoundLogo} />
-                                <MDBCardText className="text-center py-3" ><h4> Page  Not Found.</h4></MDBCardText>
-
+                                <img style={{ maxWidth: "100%", width: "60%", height: "auto" }} src={pageNotFoundLogo} />
+                                <h4 className="text-center py-3"> Page  Not Found</h4>
                                 <MDBBtn className='  mt-3' size='lg' onClick={handleSubmit} >Login</MDBBtn>
                             </MDBCardBody>
                         </MDBCard>
-
                     </MDBContainer>
 
                     <MDBFooter className="fs-6">
