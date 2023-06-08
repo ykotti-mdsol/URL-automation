@@ -10,6 +10,7 @@ import "@fortawesome/fontawesome-free/css/all.min.css";
 import './index.css'
 import PageNotFound from './Components/PageNotFound';
 import Success from './Components/Success';
+import Prac from './Components/Prac';
 
 ReactDOM.createRoot(document.getElementById('root')).render(
 
@@ -21,6 +22,7 @@ ReactDOM.createRoot(document.getElementById('root')).render(
         <Route path="/inputform" element={<InputForm />} />
         <Route path='/success' element={<Success />} />
         <Route path='/error' element={<Error />} />
+        <Route path="/prac" element={<Prac/>} />
         <Route path="*" element={<PageNotFound />} />
       </Routes>
     </BrowserRouter>

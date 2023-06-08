@@ -53,11 +53,10 @@ const Login = () => {
         setIsLoading(true);
         event.preventDefault();
         try {
-            const cloudBoltApiUrl = 'https://hdcgreeniaas.lab1.hdc.mdsol.com/api/v3/cmp/apiToken/';
+            const cloudBoltApiUrl = "http://10.194.40.99:3550/login/token";//'https://hdcgreeniaas.lab1.hdc.mdsol.com/api/v3/cmp/apiToken/';
             const cloudBoltResponse = await axios.post(cloudBoltApiUrl, {
-                "username": username,
-                "password": password,
-                "domain": "lab1.hdc.mdsol.com"
+                "email": username,
+                "password": password
             }, {
                 headers: {
                     "Access-Control-Allow-Origin": "*",
@@ -122,10 +121,11 @@ const Login = () => {
 
                                 <form >
                                     <div className="mt-4">
-                                        <MDBInput label='Lab Username' id='username' type='text'
+                                        <MDBInput label='Lab1 Username' id='username' type='text'
                                             value={username}
                                             onChange={(event) => setUsername(event.target.value)}
                                             required
+                                            autoFocus
                                         />
                                         <div className="d-flex align-items-center mt-4 mb-4">
                                             <div className="flex-grow-1">
@@ -136,7 +136,7 @@ const Login = () => {
                                                     required
                                                 />
                                             </div>
-                                            <MDBBtn onClick={(e)=>{e.preventDefault(); handleVisible();}}>
+                                            <MDBBtn type="button" onClick={(e)=>{e.preventDefault(); handleVisible();}}>
                                                 {isVisible ? (<MDBIcon fas icon="eye" />) : (<MDBIcon fas icon="eye-slash" />)}</MDBBtn>
                                         </div>
                                     </div>

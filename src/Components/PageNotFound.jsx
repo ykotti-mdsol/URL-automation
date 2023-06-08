@@ -1,7 +1,7 @@
 import React from "react";
 import { useNavigate } from 'react-router-dom';
 import MedidataLogo from "../assets/Medidata_Logo_white.png";
-import pageNotFoundLogo from "../assets/pageNotFound.webp"
+import pageNotFoundLogo from "../assets/pageNotFound.jpg"
 import {
     MDBBtn,
     MDBContainer,
