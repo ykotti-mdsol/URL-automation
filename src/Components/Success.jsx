@@ -1,30 +1,67 @@
-import React from "react";
-import { useNavigate } from 'react-router-dom';
+import React, { useEffect, useState, useRef } from "react";
+import { useNavigate, useLocation } from 'react-router-dom';
 import medidataLogo from "../assets/Medidata_Logo_white.png";
-import successLogo from "../assets/success.gif"
+import successLogo from "../assets/success.gif";
+import Timer from "./Timer";
 import {
     MDBBtn,
     MDBContainer,
     MDBCard,
     MDBCardBody,
+    MDBCardText,
+    MDBIcon,
     MDBFooter,
     MDBNavbar,
     MDBNavbarBrand,
-    MDBCardText
+    MDBDropdown,
+    MDBDropdownToggle,
+    MDBDropdownMenu,
+    MDBDropdownItem,
+    MDBNavbarItem,
 }
     from 'mdb-react-ui-kit';
 
 const Success = () => {
-    const navigate = useNavigate();
-    const handleSubmit = () => {
+    let navigate = useNavigate();
+    const location = useLocation();
+    let secondsRef = useRef(0);
+    if (location.state == null) {
+        secondsRef.current = 300;
+    } else {
+        secondsRef.current = location.state.secondsRemaining;
+    }
+    const time = new Date();
+    time.setSeconds(time.getSeconds() + secondsRef.current);
+    const timerRef = useRef(null);
+
+    const handleGetTotalSeconds = () => {
+        if (timerRef.current) {
+            const totalSeconds = timerRef.current.returnTotalSeconds();
+            secondsRef.current = totalSeconds;
+        }
+    };
+    const handelLogOut = () => {
         sessionStorage.removeItem("api_CloudBoltToken");
-        navigate('/');
+        navigate("/login");
+    };
+    const handleSubmit = () => {
+        handleGetTotalSeconds();
+        if (secondsRef.current > 0) {
+            navigate('/InputForm', {
+                state: {
+                    remainingSeconds: secondsRef.current
+                }
+            })
+        } else {
+            sessionStorage.removeItem("api_CloudBoltToken");
+            navigate('/');
+        }
     };
 
     return (
         <>
             <div style={{ display: 'flex', flexDirection: 'column', minHeight: '100vh' }}>
-                <MDBNavbar className=" " style={{ backgroundColor: 'rgba(51, 81, 119, 1)' }}>
+                <MDBNavbar style={{ backgroundColor: 'rgba(51, 81, 119, 1)', margin: '0' }}>
                     <MDBContainer fluid>
                         <MDBNavbarBrand href='#'>
                             <img
@@ -34,6 +71,17 @@ const Success = () => {
                                 loading='lazy'
                             />
                         </MDBNavbarBrand>
+                        <MDBNavbarItem className="d-flex align-items-center">
+                            <Timer ref={timerRef} expiryTimestamp={time} />
+                            <MDBDropdown>
+                                <MDBDropdownToggle tag='a' className='nav-link' role='button'>
+                                    <MDBIcon className="text-light" fas icon="user-alt" size='lg' />
+                                </MDBDropdownToggle>
+                                <MDBDropdownMenu>
+                                    <MDBDropdownItem link onClick={handelLogOut} >Log Out</MDBDropdownItem>
+                                </MDBDropdownMenu>
+                            </MDBDropdown>
+                        </MDBNavbarItem>
                     </MDBContainer>
                 </MDBNavbar>
 
@@ -44,7 +92,7 @@ const Success = () => {
                             <MDBCardBody className='p-1 text-center'>
                                 <img style={{ maxWidth: "100%", width: "20%", height: "auto" }} src={successLogo}></img>
                                 <h4 className="text-center mb-4 py-3 fw-bold" style={{ color: 'green' }}>Congratulation!! </h4>
-                                <MDBCardText className="text-center"> Your OrderID: with this Template: has been successfully created.</MDBCardText>
+                                <MDBCardText className="text-center"> Your OrderID: {location.state.orderId ?? "N.A"} with this DB: {location.state.dbName ?? "N.A"} has been successfully created.</MDBCardText>
                                 <MDBBtn className='mt-3' size='lg' onClick={handleSubmit} >Create  new</MDBBtn>
                             </MDBCardBody>
                         </MDBCard>

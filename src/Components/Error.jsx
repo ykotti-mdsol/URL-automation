@@ -1,32 +1,69 @@
-import React from "react";
-import { useNavigate } from 'react-router-dom';
+import React, { useEffect, useState,useRef } from "react";
+import { useNavigate, useLocation } from 'react-router-dom';
 import medidataLogo from "../assets/Medidata_Logo_white.png";
-import errorLogo from "../assets/error.webp"
+import errorLogo from "../assets/error.gif";
+import Timer from "./Timer";
 import {
     MDBBtn,
     MDBContainer,
     MDBCard,
     MDBCardBody,
+    MDBCardText,
+    MDBIcon,
     MDBFooter,
     MDBNavbar,
     MDBNavbarBrand,
-    MDBCardSubTitle,
-    MDBCardText
+    MDBDropdown,
+    MDBDropdownToggle,
+    MDBDropdownMenu,
+    MDBDropdownItem,
+    MDBNavbarItem,
 }
     from 'mdb-react-ui-kit';
 
 const Error = () => {
     let navigate = useNavigate();
-    const handleSubmit = () => {
+    const location = useLocation();
+    //const [seconds, setSeconds] = useState(location.state.secondsRemaining);
+    let secondsRef = useRef(0);
+    if(location.state==null){
+        secondsRef.current = 300;
+    }else{
+        secondsRef.current = location.state.secondsRemaining;
+    }
+    const time = new Date();
+    time.setSeconds(time.getSeconds() + secondsRef.current); 
+    const timerRef = useRef(null);
+
+  const handleGetTotalSeconds = () => {
+    if (timerRef.current) {
+      const totalSeconds = timerRef.current.returnTotalSeconds();
+      secondsRef.current = totalSeconds;
+    }
+  };
+    const handelLogOut = () => {
         sessionStorage.removeItem("api_CloudBoltToken");
-        navigate('/');
+        navigate("/login");
+    };
+    const handleSubmit = () => {
+        handleGetTotalSeconds();
+        if (secondsRef.current > 0) {
+            navigate('/InputForm', {
+                state: {
+                    remainingSeconds: secondsRef.current
+                }
+            })
+        }
+        else {
+            sessionStorage.removeItem("api_CloudBoltToken");
+            navigate('/');
+        }
     };
 
     return (
         <>
-
             <div style={{ display: 'flex', flexDirection: 'column', minHeight: '100vh' }}>
-                <MDBNavbar className=" " style={{ backgroundColor: 'rgba(51, 81, 119, 1)' }}>
+                <MDBNavbar style={{ backgroundColor: 'rgba(51, 81, 119, 1)', margin: '0' }}>
                     <MDBContainer fluid>
                         <MDBNavbarBrand href='#'>
                             <img
@@ -36,7 +73,17 @@ const Error = () => {
                                 loading='lazy'
                             />
                         </MDBNavbarBrand>
-
+                        <MDBNavbarItem className="d-flex align-items-center">
+                        <Timer ref={timerRef} expiryTimestamp={time} />
+                            <MDBDropdown>
+                                <MDBDropdownToggle tag='a' className='nav-link' role='button'>
+                                    <MDBIcon className="text-light" fas icon="user-alt" size='lg' />
+                                </MDBDropdownToggle>
+                                <MDBDropdownMenu>
+                                    <MDBDropdownItem link onClick={handelLogOut} >Log Out</MDBDropdownItem>
+                                </MDBDropdownMenu>
+                            </MDBDropdown>
+                        </MDBNavbarItem>
                     </MDBContainer>
                 </MDBNavbar>
 
@@ -45,9 +92,14 @@ const Error = () => {
                         <MDBCard className='p-5 shadow-9' style={{ width: '40%', background: 'hsla(0, 0%, 100%, 0.8)', backdropFilter: 'blur(30px)', marginTop: '5%', marginBottom: '5%' }} id="Fcard">
                             <h2 className="fw-bold text-center">TS - URL Deployment Tool </h2>
                             <MDBCardBody className='p-1 text-center'>
-                                <img style={{ maxWidth: "100%", width: "20%", height: "auto" }}src={errorLogo} />
+                                <img style={{ maxWidth: "100%", width: "20%", height: "auto" }} src={errorLogo} />
                                 <h3 className="text-center mb-4 py-3 fw-bold " style={{ color: 'red' }}>Oops Error!</h3>
-                                <MDBCardText className="text-center ">Sorry!!  Your OrderID: with this Template: is not created.</MDBCardText>
+                                {location.state.status == 404 ? (<MDBCardText className="text-center ">Sorry!!  Your OrderID: {location.state.orderId ?? "N.A"} or <br /> DB: {location.state.dbName ?? "N.A"} was not found.<br /> ERROR : Please check Order ID or DB Server name and try again. </MDBCardText>)
+                                    : (<>{location.state.status == 409 ? (<MDBCardText className="text-center ">Sorry!!  URL Configuration already exists.<br /> Please try with different inputs.</MDBCardText>)
+                                        : (<MDBCardText className="text-center ">Sorry!!  Your OrderID: {location.state.orderId ?? "N.A"} with this <br /> DB: {location.state.dbName ?? "N.A"} was not created.<br /> ERROR : {location.state.msg} </MDBCardText>)
+                                    }</>)
+                                }
+
                                 <MDBBtn className='  mt-3' size='lg' onClick={handleSubmit} >Try Again</MDBBtn>
                             </MDBCardBody>
                         </MDBCard>
