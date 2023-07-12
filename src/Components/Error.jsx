@@ -3,6 +3,7 @@ import { useNavigate, useLocation } from 'react-router-dom';
 import medidataLogo from "../assets/Medidata_Logo_white.png";
 import errorLogo from "../assets/error.gif";
 import Timer from "./Timer";
+import axios from "axios";
 import {
     MDBBtn,
     MDBContainer,
@@ -43,8 +44,46 @@ const Error = () => {
   };
     const handelLogOut = () => {
         sessionStorage.removeItem("api_CloudBoltToken");
+        sessionStorage.removeItem("currentUser");
+        sessionStorage.removeItem("currentUserPassword");
         navigate("/login");
     };
+    const handleCreateDatabag = ()=>{
+        handleGetTotalSeconds();
+        navigate("/inputform", {
+            state: {
+                remainingSeconds: secondsRef.current
+            }
+        })
+    }
+    const handleDeploy = () => {
+        handleGetTotalSeconds();
+        navigate("/deploy", {
+            state: {
+                remainingSeconds: secondsRef.current
+            }
+        })
+    };
+    const handleHistory = async (event) => {
+
+        try {
+            const currentUser = sessionStorage.getItem("currentUser");
+            const dataurl = "http://10.194.40.99:3550/generateDatabag/add/" + currentUser;
+            // const dataurl = "http://localhost:5000/generateDatabag/add/" + currentUser;
+            const datares = await axios.post(dataurl);
+            var dataresult = datares.data;
+            handleGetTotalSeconds();
+            navigate('/history', {
+                state: {
+                    dataresult: dataresult,
+                    remainingSeconds: secondsRef.current
+                }
+            });
+        } catch (e) {
+            console.log(e);
+        }
+
+    }
     const handleSubmit = () => {
         handleGetTotalSeconds();
         if (secondsRef.current > 0) {
@@ -56,6 +95,7 @@ const Error = () => {
         }
         else {
             sessionStorage.removeItem("api_CloudBoltToken");
+            sessionStorage.removeItem("currentUser");
             navigate('/');
         }
     };
@@ -73,8 +113,17 @@ const Error = () => {
                                 loading='lazy'
                             />
                         </MDBNavbarBrand>
-                        <MDBNavbarItem className="d-flex align-items-center">
-                        <Timer ref={timerRef} expiryTimestamp={time} />
+                        <MDBNavbarItem className="d-flex align-items-center ms-auto">
+                            <a className="createDatabagLink" onClick={handleCreateDatabag}>Create Databag</a>
+                        </MDBNavbarItem>
+                        {/* <MDBNavbarItem className="d-flex align-items-center ms-4">
+                                    <a className="createDatabagLink" onClick={handleDeployLink}>Deploy URL</a>
+                                </MDBNavbarItem> */}
+                        <MDBNavbarItem className="d-flex align-items-center ms-4">
+                            <a className="createDatabagLink" onClick={handleHistory}>History</a>
+                        </MDBNavbarItem>
+                        <MDBNavbarItem className="d-flex align-items-center ms-4">
+                            <Timer ref={timerRef} expiryTimestamp={time} />
                             <MDBDropdown>
                                 <MDBDropdownToggle tag='a' className='nav-link' role='button'>
                                     <MDBIcon className="text-light" fas icon="user-alt" size='lg' />

@@ -1,0 +1,33 @@
+
+.createDatabagLink {
+  color: white;
+}
+
+.createDatabagLink:hover {
+  color: white;
+  cursor: pointer;
+}
+
+.activePage {
+  display: inline-flex;
+  border-bottom: 3px solid white; 
+  background-color: #29425f;
+  padding: 0px;
+  font-weight: bold;
+}
+.activePage:hover{
+  cursor :pointer;
+}
+
+.pageOnHover:hover {
+  background-color: #2e4a6b;
+  cursor: pointer;
+}
+.otherPage{
+  display: inline-flex;
+  padding: 0px;
+}
+.otherPage:hover{
+  cursor: pointer;
+  background-color: #2e4a6b;
+}

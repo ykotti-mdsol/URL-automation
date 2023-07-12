@@ -17,7 +17,10 @@ const PageNotFound = () => {
 
     let navigate = useNavigate();
     const handleSubmit = () => {
-        navigate('/');
+        sessionStorage.removeItem("currentUser");
+        sessionStorage.removeItem("currentUserPassword");
+        sessionStorage.removeItem("api_CloudBoltToken");
+        navigate('/login');
     };
 
     return (

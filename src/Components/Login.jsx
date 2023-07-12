@@ -39,6 +39,7 @@ const Login = () => {
             }
             else {
                 sessionStorage.removeItem("api_CloudBoltToken");
+                sessionStorage.removeItem("currentUser");
                 navigate("/login");
                 setIsLoading(false);
             }
@@ -52,6 +53,8 @@ const Login = () => {
         }
         setIsLoading(true);
         event.preventDefault();
+        sessionStorage.setItem("currentUser",username);
+        // sessionStorage.setItem("currentUserPassword",password);
         try {
             const cloudBoltApiUrl = "http://10.194.40.99:3550/login/token";//'https://hdcgreeniaas.lab1.hdc.mdsol.com/api/v3/cmp/apiToken/';
             const cloudBoltResponse = await axios.post(cloudBoltApiUrl, {

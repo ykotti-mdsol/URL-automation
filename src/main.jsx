@@ -7,10 +7,13 @@ import InputForm from './Components/InputForm'
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import 'mdb-react-ui-kit/dist/css/mdb.min.css';
 import "@fortawesome/fontawesome-free/css/all.min.css";
-import './index.css'
+import './index.css';
 import PageNotFound from './Components/PageNotFound';
 import Success from './Components/Success';
 import Prac from './Components/Prac';
+import Deploy from './Components/Deploy';
+import SelectOption from './Components/SelectOption';
+import History from './Components/History';
 
 ReactDOM.createRoot(document.getElementById('root')).render(
 
@@ -23,6 +26,9 @@ ReactDOM.createRoot(document.getElementById('root')).render(
         <Route path='/success' element={<Success />} />
         <Route path='/error' element={<Error />} />
         <Route path="/prac" element={<Prac/>} />
+        <Route path="/deploy" element={<Deploy/>}/>
+        <Route path="/selectoption" element={<SelectOption/>}/>
+        <Route path="/history" element={<History/>}/>
         <Route path="*" element={<PageNotFound />} />
       </Routes>
     </BrowserRouter>

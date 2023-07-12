@@ -18,6 +18,8 @@ import {
     MDBDropdownItem,
     MDBSpinner,
     MDBNavbarItem,
+    MDBNavbarLink,
+    MDBNavbarNav,
 }
     from 'mdb-react-ui-kit';
 import { useLocation, useNavigate } from "react-router-dom";
@@ -32,7 +34,7 @@ import productVersionList_Legacy_Remora from "../assets/productVersion_legacy_re
 import productVersionList_Rave_Remora from "../assets/productVersion_rave_remora.json";
 import productVersionList_Rave_Classic from "../assets/productVersion_rave_classic.json";
 import productVersionList_Default_List from "../assets/productVersion_Default_List.json";
-
+import "./navbar.css";
 const InputForm = () => {
 
     const [orderId, setOrderId] = useState('');
@@ -41,7 +43,7 @@ const InputForm = () => {
     const [classicOption, setClassicOption] = useState(false);
     const [remoraOption, setRemoraOption] = useState(false);
     const [isLoading, setIsLoading] = useState(false);
-    const [productVersionValue,setProductVersionValue] = useState();
+    const [productVersionValue, setProductVersionValue] = useState();
     const [resetKey, setResetKey] = useState(0);
     const apiCloudBoltToken = sessionStorage.getItem("api_CloudBoltToken");
 
@@ -66,25 +68,27 @@ const InputForm = () => {
     const handleRaveLegacyOption = () => {
         setRaveLegacyOption(true);
         setRaveOption(false);
-         SelectInputClear();
+        SelectInputClear();
     };
     const handelRaveOption = () => {
         setRaveOption(true);
         setRaveLegacyOption(false);
-         SelectInputClear();
+        SelectInputClear();
     };
     const handleClasssicOption = () => {
         setClassicOption(true);
         setRemoraOption(false);
-         SelectInputClear();
+        SelectInputClear();
     };
     const handelRemoraOption = () => {
         setRemoraOption(true);
         setClassicOption(false);
-         SelectInputClear();
+        SelectInputClear();
     };
     const handelLogOut = () => {
         sessionStorage.removeItem("api_CloudBoltToken");
+        sessionStorage.removeItem("currentUser");
+        sessionStorage.removeItem("currentUserPassword");
         navigate("/login");
     };
     const handleProductVersionChange = (selectedOption) => {
@@ -112,6 +116,8 @@ const InputForm = () => {
         return a.value.localeCompare(b.value);
     });
     const timerRef = useRef(null);
+    const options = { day: '2-digit', month: '2-digit', year: 'numeric', hour: '2-digit', minute: '2-digit', second: '2-digit', hour12: false };
+    const currentDateTime = new Date().toLocaleString(undefined, options).replace(',', '');
 
     const handleGetTotalSeconds = () => {
         if (timerRef.current) {
@@ -119,9 +125,45 @@ const InputForm = () => {
             secondsRef.current = totalSeconds;
         }
     };
+    const handleCreateDatabag = () => {
+        handleGetTotalSeconds();
+        navigate("/inputform", {
+            state: {
+                remainingSeconds: secondsRef.current
+            }
+        })
+    }
+    const handleDeploy = () => {
+        handleGetTotalSeconds();
+        navigate("/deploy", {
+            state: {
+                remainingSeconds: secondsRef.current
+            }
+        })
+    };
+    const handleHistory = async (event) => {
+
+        try {
+            const currentUser = sessionStorage.getItem("currentUser");
+            const dataurl = "http://10.194.40.99:3550/generateDatabag/add/" + currentUser;
+            // const dataurl = "http://localhost:5000/generateDatabag/add/" + currentUser;
+            const datares = await axios.post(dataurl);
+            var dataresult = datares.data;
+            handleGetTotalSeconds();
+            navigate('/history', {
+                state: {
+                    dataresult: dataresult,
+                    remainingSeconds: secondsRef.current
+                }
+            });
+        } catch (e) {
+            console.log(e);
+        }
+
+    }
     const handleSubmit = async (e) => {
 
-        if (!orderId || (DBServerRef==null) || (productVersionValue==null)
+        if (!orderId || (DBServerRef == null) || (productVersionValue == null)
             || !(raveLegacyOption || raveOption) || !(classicOption || remoraOption)
         ) {
             console.log("Required some fields");
@@ -130,28 +172,39 @@ const InputForm = () => {
         e.preventDefault();
         setIsLoading(true);
         const orderIDUrl = "http://10.194.40.99:3550/generateDatabag/new"; //`https://hdcgreeniaas.lab1.hdc.mdsol.com/api/v3/cmp/resources/${orderId}/`;
-        //const orderIDUrl = "http://localhost:4000/generateDatabag/new"; //`https://hdcgreeniaas.lab1.hdc.mdsol.com/api/v3/cmp/resources/${orderId}/`;
+        // const orderIDUrl = "http://localhost:5000/generateDatabag/new"; //`https://hdcgreeniaas.lab1.hdc.mdsol.com/api/v3/cmp/resources/${orderId}/`;
         const app = raveOption ? "Rave" : raveLegacyOption ? "Legacy" : null;
         const version = classicOption ? "Classic" : remoraOption ? "Remora" : null;
         const productVersionActualValue = productVersionValue ? productVersionValue.value : null;
+        const currentUser = sessionStorage.getItem("currentUser");
         const bodyData = {
             "orderId": orderId,
             "productVersion": productVersionActualValue,
             "dbServerName": DBServerRef.current,
             "app": app,
             "version": version,
-            "token": apiCloudBoltToken
+            "token": apiCloudBoltToken,
+            "currentUser": currentUser,
+            "currentDateTime": currentDateTime
         };
         try {
             const response = await axios.post(orderIDUrl, bodyData);
             if (response.status < 300) {
                 handleGetTotalSeconds();
+                const resData = response.data;
+                // console.log(resData);
+                const url = resData['global']['RAVE_URL_BASE'];
+                //console.log(url);
                 navigate("/success", {
                     state: {
                         orderId: orderId,
                         version: version,
                         dbName: DBServerRef.current,
-                        secondsRemaining: secondsRef.current
+                        secondsRemaining: secondsRef.current,
+                        url: url,
+                        app: app == "Rave" ? "rave" : "rave-legacy",
+                        deployVersion: version == "Classic" ? "rave" : "remora",
+                        template: productVersionActualValue
                     }
                 })
             }
@@ -160,6 +213,8 @@ const InputForm = () => {
                 if (error.response.status == 401) {
                     alert("Session Expired!! Login again!!");
                     sessionStorage.removeItem("api_CloudBoltToken");
+                    sessionStorage.removeItem("currentUser");
+                    sessionStorage.removeItem("currentUserPassword");
                     navigate("/login");
                 }
                 else {
@@ -177,9 +232,11 @@ const InputForm = () => {
                 }
             } else if (error.request) {
                 alert("network error");
+                setIsLoading(false);
             } else {
                 console.log(error);
                 alert("Error please see console ");
+                setIsLoading(false);
             }
         }
     };
@@ -188,9 +245,10 @@ const InputForm = () => {
         <>
             {apiCloudBoltToken ? (
                 <>
-                    <div style={{ display: 'flex', flexDirection: 'column', minHeight: '100vh', margin: '0 auto' }}>
-                        <MDBNavbar style={{ backgroundColor: 'rgba(51, 81, 119, 1)', margin: '0' }}>
-                            <MDBContainer fluid>
+                    <div style={{ display: 'flex', flexDirection: 'column', minHeight: '100vh', margin: '0px' }}>
+
+                        <MDBNavbar style={{ backgroundColor: 'rgba(51, 81, 119, 1)', margin: '0px', padding: '0px' }}>
+                            <MDBContainer fluid className="navbarContainer">
                                 <MDBNavbarBrand href='#'>
                                     <img
                                         src={medidataLogo}
@@ -199,7 +257,21 @@ const InputForm = () => {
                                         loading='lazy'
                                     />
                                 </MDBNavbarBrand>
-                                <MDBNavbarItem className="d-flex align-items-center">
+                                {/* <MDBNavbarNav className='mr-auto mb-2 mb-lg-0'> */}
+                                <div className="ms-auto activePage " onClick={handleCreateDatabag}>
+                                    <MDBNavbarItem className="d-flex align-items-center   ">
+                                        <a className="createDatabagLink m-2 p-1" >Create Databag</a>
+                                    </MDBNavbarItem>
+                                </div>
+                                {/* <MDBNavbarItem className="d-flex align-items-center ms-4">
+                                        <a className="createDatabagLink" onClick={handleDeploy}>Deploy URL</a>
+                                    </MDBNavbarItem> */}
+                                <div onClick={handleHistory} className="otherPage ms-2">
+                                    <MDBNavbarItem className="d-flex align-items-center " >
+                                        <a className="createDatabagLink m-2 p-1" >History</a>
+                                    </MDBNavbarItem>
+                                </div>
+                                <MDBNavbarItem className="d-flex align-items-center ms-4">
                                     <Timer ref={timerRef} expiryTimestamp={time} />
                                     <MDBDropdown>
                                         <MDBDropdownToggle tag='a' className='nav-link' role='button'>
@@ -210,22 +282,23 @@ const InputForm = () => {
                                         </MDBDropdownMenu>
                                     </MDBDropdown>
                                 </MDBNavbarItem>
+                                {/* </MDBNavbarNav> */}
                             </MDBContainer>
                         </MDBNavbar>
-
                         <div style={{ display: 'flex', flexDirection: 'column', justifyContent: 'space-between', flex: 1, margin: '0' }}>
                             <MDBContainer fluid className="d-flex align-items-center justify-content-center flex-grow-1" style={{ margin: '0' }}>
                                 <MDBCard className='p-5 shadow-9' style={{ width: '40%', background: 'hsla(0, 0%, 100%, 0.8)', margin: '0' }} id="Fcard">
                                     <h2 className="fw-bold text-center">TS - URL Deployment Tool </h2>
                                     <MDBCardBody className='p-1'>
                                         <form >
-                                            <MDBInput wrapperClass='mt-4' label='Cloudbolt Order ID' id='orderId' type='text' size='lg'
+                                            <MDBInput wrapperClass='mt-4' label='Cloudbolt Resource ID' id='orderId' type='text' size='lg'
                                                 onChange={(e) => setOrderId(e.target.value)}
                                                 required
                                                 value={orderId}
                                                 autoComplete="off"
+                                                autoFocus
                                             />
-                                            <h5 className=" fw-bold mt-4 mb-0" >Select App</h5>
+                                            <h5 className=" fw-bold mt-4 mb-0" >Select App:</h5>
                                             <div className="d-flex  text-start mt-2 mb-0">
                                                 <div style={{ minWidth: '40%' }}>
                                                     <MDBCheckbox name='raveLegacyOption' id='raveLegacyOption' value='raveLegacy' label='Rave Legacy'
@@ -242,7 +315,7 @@ const InputForm = () => {
                                                     />
                                                 </div>
                                             </div>
-                                            <h5 className="mt-3  mb-0 fw-bold">Select its corresponding version</h5>
+                                            <h5 className="mt-3  mb-0 fw-bold">Select its corresponding version:</h5>
                                             <div className="d-flex text-start mt-2 mb-0" >
                                                 <div style={{ minWidth: '40%' }}>
                                                     <MDBCheckbox name='classicOption' id='classicOption' value='classicOption' label='Classic'
