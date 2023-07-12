@@ -3,7 +3,10 @@ import { useNavigate, useLocation } from 'react-router-dom';
 import medidataLogo from "../assets/Medidata_Logo_white.png";
 import successLogo from "../assets/success.gif";
 import Timer from "./Timer";
+<<<<<<< HEAD
 import axios from "axios";
+=======
+>>>>>>> a1938710be3a105b5143f81c8efabb4f515332ab
 import {
     MDBBtn,
     MDBContainer,
@@ -19,6 +22,7 @@ import {
     MDBDropdownMenu,
     MDBDropdownItem,
     MDBNavbarItem,
+<<<<<<< HEAD
     MDBModal,
     MDBModalDialog,
     MDBModalContent,
@@ -26,11 +30,16 @@ import {
     MDBModalTitle,
     MDBModalBody,
     MDBModalFooter
+=======
+>>>>>>> a1938710be3a105b5143f81c8efabb4f515332ab
 }
     from 'mdb-react-ui-kit';
 
 const Success = () => {
+<<<<<<< HEAD
     const [basicModal, setBasicModal] = useState(false);
+=======
+>>>>>>> a1938710be3a105b5143f81c8efabb4f515332ab
     let navigate = useNavigate();
     const location = useLocation();
     let secondsRef = useRef(0);
@@ -49,6 +58,7 @@ const Success = () => {
             secondsRef.current = totalSeconds;
         }
     };
+<<<<<<< HEAD
 
     const handleCreateDatabag = () => {
         handleGetTotalSeconds();
@@ -90,18 +100,27 @@ const Success = () => {
         sessionStorage.removeItem("api_CloudBoltToken");
         sessionStorage.removeItem("currentUser");
         sessionStorage.removeItem("currentUserPassword");
+=======
+    const handelLogOut = () => {
+        sessionStorage.removeItem("api_CloudBoltToken");
+>>>>>>> a1938710be3a105b5143f81c8efabb4f515332ab
         navigate("/login");
     };
     const handleSubmit = () => {
         handleGetTotalSeconds();
         if (secondsRef.current > 0) {
+<<<<<<< HEAD
             navigate('/inputForm', {
+=======
+            navigate('/InputForm', {
+>>>>>>> a1938710be3a105b5143f81c8efabb4f515332ab
                 state: {
                     remainingSeconds: secondsRef.current
                 }
             })
         } else {
             sessionStorage.removeItem("api_CloudBoltToken");
+<<<<<<< HEAD
             sessionStorage.removeItem("currentUser");
             sessionStorage.removeItem("currentUserPassword");
             navigate('/');
@@ -145,11 +164,16 @@ const Success = () => {
             }
         }
 
+=======
+            navigate('/');
+        }
+>>>>>>> a1938710be3a105b5143f81c8efabb4f515332ab
     };
 
     return (
         <>
             <div style={{ display: 'flex', flexDirection: 'column', minHeight: '100vh' }}>
+<<<<<<< HEAD
                 <MDBModal show={basicModal} setShow={setBasicModal} tabIndex='-1'>
                     <MDBModalDialog>
                         <MDBModalContent>
@@ -166,6 +190,8 @@ const Success = () => {
                         </MDBModalContent>
                     </MDBModalDialog>
                 </MDBModal>
+=======
+>>>>>>> a1938710be3a105b5143f81c8efabb4f515332ab
                 <MDBNavbar style={{ backgroundColor: 'rgba(51, 81, 119, 1)', margin: '0' }}>
                     <MDBContainer fluid>
                         <MDBNavbarBrand href='#'>
@@ -176,6 +202,7 @@ const Success = () => {
                                 loading='lazy'
                             />
                         </MDBNavbarBrand>
+<<<<<<< HEAD
                         <MDBNavbarItem className="d-flex align-items-center ms-auto">
                             <a className="createDatabagLink" onClick={handleCreateDatabag}>Create Databag</a>
                         </MDBNavbarItem>
@@ -186,6 +213,9 @@ const Success = () => {
                             <a className="createDatabagLink" onClick={handleHistory}>History</a>
                         </MDBNavbarItem>
                         <MDBNavbarItem className="d-flex align-items-center ms-4">
+=======
+                        <MDBNavbarItem className="d-flex align-items-center">
+>>>>>>> a1938710be3a105b5143f81c8efabb4f515332ab
                             <Timer ref={timerRef} expiryTimestamp={time} />
                             <MDBDropdown>
                                 <MDBDropdownToggle tag='a' className='nav-link' role='button'>
@@ -207,8 +237,12 @@ const Success = () => {
                                 <img style={{ maxWidth: "100%", width: "20%", height: "auto" }} src={successLogo}></img>
                                 <h4 className="text-center mb-4 py-3 fw-bold" style={{ color: 'green' }}>Congratulation!! </h4>
                                 <MDBCardText className="text-center"> Your OrderID: {location.state.orderId ?? "N.A"} with this DB: {location.state.dbName ?? "N.A"} has been successfully created.</MDBCardText>
+<<<<<<< HEAD
                                 <MDBBtn className='mt-3' size='lg' onClick={handleSubmit} >Create  new</MDBBtn><br />
                                 {/* <MDBBtn className='mt-3' size='lg' onClick={handleDeploy} >Deploy</MDBBtn> */}
+=======
+                                <MDBBtn className='mt-3' size='lg' onClick={handleSubmit} >Create  new</MDBBtn>
+>>>>>>> a1938710be3a105b5143f81c8efabb4f515332ab
                             </MDBCardBody>
                         </MDBCard>
                     </MDBContainer>

@@ -11,9 +11,12 @@ import './index.css';
 import PageNotFound from './Components/PageNotFound';
 import Success from './Components/Success';
 import Prac from './Components/Prac';
+<<<<<<< HEAD
 import Deploy from './Components/Deploy';
 import SelectOption from './Components/SelectOption';
 import History from './Components/History';
+=======
+>>>>>>> a1938710be3a105b5143f81c8efabb4f515332ab
 
 ReactDOM.createRoot(document.getElementById('root')).render(
 
@@ -26,9 +29,12 @@ ReactDOM.createRoot(document.getElementById('root')).render(
         <Route path='/success' element={<Success />} />
         <Route path='/error' element={<Error />} />
         <Route path="/prac" element={<Prac/>} />
+<<<<<<< HEAD
         <Route path="/deploy" element={<Deploy/>}/>
         <Route path="/selectoption" element={<SelectOption/>}/>
         <Route path="/history" element={<History/>}/>
+=======
+>>>>>>> a1938710be3a105b5143f81c8efabb4f515332ab
         <Route path="*" element={<PageNotFound />} />
       </Routes>
     </BrowserRouter>

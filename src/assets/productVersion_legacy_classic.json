@@ -46,5 +46,10 @@
     { "value": "2021.1.2-Sandbox", "label": "2021.1.2-Sandbox" },
     { "value": "2021.1.4-Sandbox", "label": "2021.1.4-Sandbox" },
     { "value": "2021.2.0-Sandbox", "label": "2021.2.0-Sandbox" },
+<<<<<<< HEAD
     { "value": "2021.2.1-Sandbox", "label": "2021.2.1-Sandbox" }
+=======
+    { "value": "2021.2.1-Sandbox", "label": "2021.2.1-Sandbox" },
+    { "value": "2022.1.0-Sandbox", "label": "2022.1.0-Sandbox" }
+>>>>>>> a1938710be3a105b5143f81c8efabb4f515332ab
 ]
