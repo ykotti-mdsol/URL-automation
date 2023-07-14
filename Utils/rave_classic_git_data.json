@@ -1,0 +1,112 @@
+[
+    {
+        "key": "2022.1.0",
+        "value": {
+            "DEPLOY_ARTIFACTS_ITEMS": "Medidata.AdminProcess.3718.046aa4b8.zip,Medidata.Core.Service.3718.046aa4b8.zip,Medidata.Database.3718.046aa4b8.zip,Medidata.Integrations.ObjectLoader.Service.3718.046aa4b8.zip,Medidata.Rave.Integration.Service.3718.046aa4b8.zip,MedidataRave.3718.046aa4b8.zip,RaveCrystalViewer.3718.046aa4b8.zip,RaveWebServices.3718.046aa4b8.zip,TripMonitorWS.3718.046aa4b8.zip",
+            "PIR_LINK": "https://github.com/mdsol/RaveEDC/blob/release/2022.1.0/pir/pir-classic-rave.txt",
+            "RAVE_BUILD_ASSEMBLY_VERSION": "5.6.5.765",
+            "RAVE_BUILD_COMMIT_ID": "20220415165815-046aa4b81",
+            "RAVE_BUILD_PRODUCT_NAME": "Medidata Classic Rave® 2022.1.0",
+            "RAVE_PRODUCT_VERSION": "2022.1.0"
+        }
+    },
+    {
+        "key": "2022.1.1",
+        "value": {
+            "DEPLOY_ARTIFACTS_ITEMS": "Medidata.AdminProcess.4184.f698d52b.zip,Medidata.Core.Service.4184.f698d52b.zip,Medidata.Database.4184.f698d52b.zip,Medidata.Integrations.ObjectLoader.Service.4184.f698d52b.zip,Medidata.Rave.Integration.Service.4184.f698d52b.zip,MedidataRave.4184.f698d52b.zip,RaveCrystalViewer.4184.f698d52b.zip,RaveWebServices.4184.f698d52b.zip,TripMonitorWS.4184.f698d52b.zip",
+            "PIR_LINK": "https://github.com/mdsol/RaveEDC/blob/release/2022.1.1/pir/pir-classic-rave.txt",
+            "RAVE_BUILD_ASSEMBLY_VERSION": "5.6.5.766",
+            "RAVE_BUILD_COMMIT_ID": "20220517005616-f698d52b",
+            "RAVE_BUILD_PRODUCT_NAME": "Medidata Classic Rave® 2022.1.1",
+            "RAVE_PRODUCT_VERSION": "2022.1.1"
+        }
+    },
+    {
+        "key": "2022.2.0",
+        "value": {
+            "DEPLOY_ARTIFACTS_ITEMS": "Medidata.AdminProcess.4899.20522131.zip,Medidata.Core.Service.4899.20522131.zip,Medidata.Database.4899.20522131.zip,Medidata.Integrations.ObjectLoader.Service.4899.20522131.zip,Medidata.Rave.Integration.Service.4899.20522131.zip,MedidataRave.4899.20522131.zip,RaveCrystalViewer.4899.20522131.zip,RaveWebServices.4899.20522131.zip,TripMonitorWS.4899.20522131.zip",
+            "PIR_LINK": "https://github.com/mdsol/RaveEDC/blob/release/2022.2.0/pir/pir-classic-rave.txt",
+            "RAVE_BUILD_ASSEMBLY_VERSION": "5.6.5.781",
+            "RAVE_BUILD_COMMIT_ID": "20220714200813-20522131",
+            "RAVE_BUILD_PRODUCT_NAME": "Medidata Classic Rave® 2022.2.0",
+            "RAVE_PRODUCT_VERSION": "2022.2.0"
+        }
+    },
+    {
+        "key": "2022.2.1",
+        "value": {
+            "DEPLOY_ARTIFACTS_ITEMS": "Medidata.AdminProcess.5230.b00d6fa2.zip,Medidata.Core.Service.5230.b00d6fa2.zip,Medidata.Database.5230.b00d6fa2.zip,Medidata.Integrations.ObjectLoader.Service.5230.b00d6fa2.zip,Medidata.Rave.Integration.Service.5230.b00d6fa2.zip,MedidataRave.5230.b00d6fa2.zip,RaveCrystalViewer.5230.b00d6fa2.zip,RaveWebServices.5230.b00d6fa2.zip,TripMonitorWS.5230.b00d6fa2.zip",
+            "PIR_LINK": "https://github.com/mdsol/RaveEDC/blob/release/2022.2.1/pir/pir-classic-rave.txt",
+            "RAVE_BUILD_ASSEMBLY_VERSION": "5.6.5.782",
+            "RAVE_BUILD_COMMIT_ID": "20220812152655-b00d6fa2",
+            "RAVE_BUILD_PRODUCT_NAME": "Medidata Classic Rave® 2022.2.1",
+            "RAVE_PRODUCT_VERSION": "2022.2.1"
+        }
+    },
+    {
+        "key": "2022.3.0",
+        "value": {
+            "DEPLOY_ARTIFACTS_ITEMS": "Medidata.AdminProcess.6218.ed8bff52.zip,Medidata.Core.Service.6218.ed8bff52.zip,Medidata.Database.6218.ed8bff52.zip,Medidata.Integrations.ObjectLoader.Service.6218.ed8bff52.zip,Medidata.Rave.Integration.Service.6218.ed8bff52.zip,MedidataRave.6218.ed8bff52.zip,RaveCrystalViewer.6218.ed8bff52.zip,RaveWebServices.6218.ed8bff52.zip,TripMonitorWS.6218.ed8bff52.zip",
+            "PIR_LINK": "https://github.com/mdsol/RaveEDC/blob/release/2022.3.0/pir/pir-classic-rave.txt",
+            "RAVE_BUILD_ASSEMBLY_VERSION": "5.6.5.790",
+            "RAVE_BUILD_COMMIT_ID": "20221102210345-ed8bff52",
+            "RAVE_BUILD_PRODUCT_NAME": "Medidata Classic Rave® 2022.3.0",
+            "RAVE_PRODUCT_VERSION": "2022.3.0"
+        }
+    },
+    {
+        "key": "2022.3.1",
+        "value": {
+            "DEPLOY_ARTIFACTS_ITEMS": "Medidata.AdminProcess.6733.2b4cbcea.zip,Medidata.Core.Service.6733.2b4cbcea.zip,Medidata.Database.6733.2b4cbcea.zip,Medidata.Integrations.ObjectLoader.Service.6733.2b4cbcea.zip,Medidata.Rave.Integration.Service.6733.2b4cbcea.zip,MedidataRave.6733.2b4cbcea.zip,RaveCrystalViewer.6733.2b4cbcea.zip,RaveWebServices.6733.2b4cbcea.zip,TripMonitorWS.6733.2b4cbcea.zip",
+            "PIR_LINK": "https://github.com/mdsol/RaveEDC/blob/release/2022.3.1/pir/pir-classic-rave.txt",
+            "RAVE_BUILD_ASSEMBLY_VERSION": "5.6.5.800",
+            "RAVE_BUILD_COMMIT_ID": "20221220041301-2b4cbcea",
+            "RAVE_BUILD_PRODUCT_NAME": "Medidata Classic Rave® 2022.3.1",
+            "RAVE_PRODUCT_VERSION": "2022.3.1"
+        }
+    },
+    {
+        "key": "2022.3.2",
+        "value": {
+            "DEPLOY_ARTIFACTS_ITEMS": "Medidata.AdminProcess.7425.d30a11e6.zip,Medidata.Core.Service.7425.d30a11e6.zip,Medidata.Database.7425.d30a11e6.zip,Medidata.Integrations.ObjectLoader.Service.7425.d30a11e6.zip,Medidata.Rave.Integration.Service.7425.d30a11e6.zip,MedidataRave.7425.d30a11e6.zip,RaveCrystalViewer.7425.d30a11e6.zip,RaveWebServices.7425.d30a11e6.zip,TripMonitorWS.7425.d30a11e6.zip",
+            "PIR_LINK": "https://github.com/mdsol/RaveEDC/blob/release/2022.3.2/pir/pir-classic-rave.txt",
+            "RAVE_BUILD_ASSEMBLY_VERSION": "5.6.5.801",
+            "RAVE_BUILD_COMMIT_ID": "20230213180447-d30a11e6",
+            "RAVE_BUILD_PRODUCT_NAME": "Medidata Classic Rave® 2022.3.2",
+            "RAVE_PRODUCT_VERSION": "2022.3.2"
+        }
+    },
+    {
+        "key": "2023.1.0",
+        "value": {
+            "DEPLOY_ARTIFACTS_ITEMS": "Medidata.AdminProcess.97.2b991a30.zip,Medidata.Core.Service.97.2b991a30.zip,Medidata.Database.97.2b991a30.zip,Medidata.Integrations.ObjectLoader.Service.97.2b991a30.zip,Medidata.Rave.Integration.Service.97.2b991a30.zip,MedidataRave.97.2b991a30.zip,RaveCrystalViewer.97.2b991a30.zip,RaveWebServices.97.2b991a30.zip,TripMonitorWS.97.2b991a30.zip",
+            "PIR_LINK": "https://mdsol.jfrog.io/artifactory/raveedc-metadata-preprod-local/rave-classic/pir/PIR-2023.1.0-97-2b991a30.txt",
+            "RAVE_BUILD_ASSEMBLY_VERSION": "5.6.5.810",
+            "RAVE_BUILD_COMMIT_ID": "20230424-2b991a30",
+            "RAVE_BUILD_PRODUCT_NAME": "Medidata Classic Rave® 2023.1.0",
+            "RAVE_PRODUCT_VERSION": "2023.1.0"
+          }
+    },
+    {
+        "key": "2023.1.1",
+        "value": {
+            "DEPLOY_ARTIFACTS_ITEMS": "Medidata.AdminProcess.98.5d9a923e.zip,Medidata.Core.Service.98.5d9a923e.zip,Medidata.Database.98.5d9a923e.zip,Medidata.Integrations.ObjectLoader.Service.98.5d9a923e.zip,Medidata.Rave.Integration.Service.98.5d9a923e.zip,MedidataRave.98.5d9a923e.zip,RaveCrystalViewer.98.5d9a923e.zip,RaveWebServices.98.5d9a923e.zip,TripMonitorWS.98.5d9a923e.zip",
+            "PIR_LINK": "https://mdsol.jfrog.io/artifactory/raveedc-metadata-preprod-local/rave-classic/pir/PIR-2023.1.1-98-5d9a923e.txt",
+            "RAVE_BUILD_ASSEMBLY_VERSION": "5.6.5.811",
+            "RAVE_BUILD_COMMIT_ID": "20230425-5d9a923e",
+            "RAVE_BUILD_PRODUCT_NAME": "Medidata Classic Rave® 2023.1.1",
+            "RAVE_PRODUCT_VERSION": "2023.1.1"
+          }
+    },
+    {
+        "key": "2023.1.2",
+        "value": {
+            "DEPLOY_ARTIFACTS_ITEMS": "Medidata.AdminProcess.102.c4e05e49.zip,Medidata.Core.Service.102.c4e05e49.zip,Medidata.Database.102.c4e05e49.zip,Medidata.Integrations.ObjectLoader.Service.102.c4e05e49.zip,Medidata.Rave.Integration.Service.102.c4e05e49.zip,MedidataRave.102.c4e05e49.zip,RaveCrystalViewer.102.c4e05e49.zip,RaveWebServices.102.c4e05e49.zip,TripMonitorWS.102.c4e05e49.zip",
+            "PIR_LINK": "https://mdsol.jfrog.io/artifactory/raveedc-metadata-preprod-local/rave-classic/pir/PIR-2023.1.2-102-c4e05e49.txt",
+            "RAVE_BUILD_ASSEMBLY_VERSION": "5.6.5.820",
+            "RAVE_BUILD_COMMIT_ID": "20230526-c4e05e49",
+            "RAVE_BUILD_PRODUCT_NAME": "Medidata Classic Rave® 2023.1.2",
+            "RAVE_PRODUCT_VERSION": "2023.1.2"
+          }
+    }
+]

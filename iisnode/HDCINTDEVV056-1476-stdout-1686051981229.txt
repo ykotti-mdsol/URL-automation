@@ -1,0 +1,75 @@
+Server running on port \\.\pipe\11ec841b-ee45-4c1a-8829-23321a1645e2
+Login token generated for: ykotti
+Login token generated for: ykotti
+Login token generated for: ykotti
+Login token generated for: ykotti
+{ stage: 'sandbox' }
+OrderID: 6144 , Product version: null , DB Server name: hdcsboxdbsv491
+hgsbxrave491.mdsol.com hdcsboxwebv2552 hdcsboxappv2094 Rave Classic
+Created Databag..!
+Login token generated for: ykotti
+{ stage: 'sandbox' }
+OrderID: 6144 , Product version: null , DB Server name: hdcsboxdbsv491
+hgsbxrave491.mdsol.com hdcsboxwebv2552 hdcsboxappv2094 Legacy Classic
+Exception
+404 Not Found Template does not exist.  If trying to create a template, use POST.
+{ stage: 'sandbox' }
+OrderID: 6144 , Product version: remora-2020.3.3-sandbox , DB Server name: hdcsboxdbsv491
+hgsbxrave491.mdsol.com hdcsboxwebv2552 hdcsboxappv2094 Legacy Remora
+Created Databag..!
+{ stage: 'sandbox' }
+OrderID: 6144 , Product version: 2020.1.0-sandbox , DB Server name: hdcsboxdbsv491
+hgsbxrave491.mdsol.com hdcsboxwebv2552 hdcsboxappv2094 Legacy Classic
+Created Databag..!
+{ stage: 'sandbox' }
+OrderID: 6144 , Product version: 2020.2.0-sandbox , DB Server name: hdcsboxdbsv491
+hgsbxrave491.mdsol.com hdcsboxwebv2552 hdcsboxappv2094 Legacy Classic
+Created Databag..!
+{ stage: 'sandbox' }
+OrderID: 6144 , Product version: 2020.1.0-sandbox , DB Server name: hdcsboxdbsv491
+hgsbxrave491.mdsol.com hdcsboxwebv2552 hdcsboxappv2094 Legacy Classic
+Exception
+409 Conflict URL Configuration already exists.  If trying to update a URL Configuration, use PUT.
+Login token generated for: ykotti
+{ stage: 'sandbox' }
+OrderID: 6144 , Product version: remora-2020.1.1-sandbox , DB Server name: hdcsboxdbsv491
+hgsbxrave491.mdsol.com hdcsboxwebv2552 hdcsboxappv2094 Legacy Remora
+Created Databag..!
+{ stage: 'sandbox' }
+OrderID: 6144 , Product version: remora-2019.1.2-sandbox , DB Server name: hdcsboxdbsv491
+hgsbxrave491.mdsol.com hdcsboxwebv2552 hdcsboxappv2094 Legacy Remora
+Created Databag..!
+Login token generated for: ykotti
+Login token generated for: ykotti
+{ stage: 'sandbox' }
+OrderID: 6144 , Product version: null , DB Server name: hdcsboxdbsv491
+hgsbxrave491.mdsol.com hdcsboxwebv2552 hdcsboxappv2094 Rave Classic
+Exception
+409 Conflict URL Configuration already exists.  If trying to update a URL Configuration, use PUT.
+{ stage: 'sandbox' }
+OrderID: 6144 , Product version: null , DB Server name: hdcsboxdbsv491
+hgsbxrave491.mdsol.com hdcsboxwebv2552 hdcsboxappv2094 Rave Remora
+Created Databag..!
+Login token generated for: ykotti
+{ stage: 'sandbox' }
+OrderID: 6144 , Product version: null , DB Server name: hdcsboxdbsv491
+hgsbxrave491.mdsol.com hdcsboxwebv2552 hdcsboxappv2094 Rave Classic
+Exception
+409 Conflict URL Configuration already exists.  If trying to update a URL Configuration, use PUT.
+{ stage: 'sandbox' }
+OrderID: 6144 , Product version: null , DB Server name: hdcsboxdbsv491
+hgsbxrave491.mdsol.com hdcsboxwebv2552 hdcsboxappv2094 Rave Remora
+Exception
+409 Conflict URL Configuration already exists.  If trying to update a URL Configuration, use PUT.
+{ stage: 'sandbox' }
+OrderID: 6144 , Product version: 2016.3.1-sandbox , DB Server name: hdcsboxdbsv491
+hgsbxrave491.mdsol.com hdcsboxwebv2552 hdcsboxappv2094 Legacy Classic
+Created Databag..!
+{ stage: 'sandbox' }
+OrderID: 6144 , Product version: remora-2021.2.1-sandbox , DB Server name: hdcsboxdbsv491
+hgsbxrave491.mdsol.com hdcsboxwebv2552 hdcsboxappv2094 Legacy Remora
+Created Databag..!
+{ stage: 'sandbox' }
+OrderID: 6144 , Product version: null , DB Server name: hdcsboxdbsv491
+hgsbxrave491.mdsol.com hdcsboxwebv2552 hdcsboxappv2094 Rave Classic
+Created Databag..!

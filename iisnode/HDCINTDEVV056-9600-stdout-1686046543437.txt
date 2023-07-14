@@ -1,0 +1,7 @@
+Server running on port \\.\pipe\541de0b1-2215-4e84-987b-8827e4ff0366
+Login token generated for: ykotti
+{ stage: 'sandbox' }
+OrderID: 6144 , Product version: 2016.2.0-sandbox , DB Server name: hdcsboxdbsv491
+hgsbxrave491.mdsol.com hdcsboxwebv2552 hdcsboxappv2094 Legacy Classic
+Exception
+409 Conflict URL Configuration already exists.  If trying to update a URL Configuration, use PUT.

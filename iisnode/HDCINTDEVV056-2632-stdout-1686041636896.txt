@@ -1,0 +1,2 @@
+Server running on port \\.\pipe\3a2e761c-4a71-4129-9002-3abbabb52407
+Login token generated for: ykotti

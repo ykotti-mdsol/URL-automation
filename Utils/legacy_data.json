@@ -1,0 +1,322 @@
+[
+    {
+        "version": "2016.3.0",
+        "artifact": "20160309-f16e505",
+        "artifactItems": "Medidata.AdminProcess.zip,Medidata.Core.Service.zip,Medidata.Database.zip,Medidata.Rave.Integration.Service.zip,MedidataRave.zip,RaveCrystalViewer.zip,RaveWebServices.zip,TripMonitorWS.zip"
+    },
+    {
+        "version": "2016.4.0",
+        "artifact": "20160503-1300e6d",
+        "artifactItems": "Medidata.AdminProcess.zip,Medidata.Core.Service.zip,Medidata.Database.zip,Medidata.Rave.Integration.Service.zip,MedidataRave.zip,RaveCrystalViewer.zip,RaveWebServices.zip,TripMonitorWS.zip"
+    },
+    {
+        "version": "2016.4.1",
+        "artifact": "20180608-cffb4a2",
+        "artifactItems": "Medidata.AdminProcess.zip,Medidata.Core.Service.zip,Medidata.Database.zip,Medidata.Rave.Integration.Service.zip,MedidataRave.zip,RaveCrystalViewer.zip,RaveWebServices.zip,TripMonitorWS.zip"
+    },
+    {
+        "version": "2016.5.0",
+        "artifact": "20161026-2a49a9a",
+        "artifactItems": "Medidata.AdminProcess.zip,Medidata.Core.Service.zip,Medidata.Database.zip,Medidata.Integrations.ObjectLoader.Service.zip,Medidata.Rave.Integration.Service.zip,MedidataRave.zip,RaveCrystalViewer.zip,RaveWebServices.zip,TripMonitorWS.zip"
+    },
+    {
+        "version": "2016.5.2",
+        "artifact": "20170203-f492e7b",
+        "artifactItems": "Medidata.AdminProcess.zip,Medidata.Core.Service.zip,Medidata.Database.zip,Medidata.Integrations.ObjectLoader.Service.zip,Medidata.Rave.Integration.Service.zip,MedidataRave.zip,RaveCrystalViewer.zip,RaveWebServices.zip,TripMonitorWS.zip"
+    },
+    {
+        "version": "2016.5.3",
+        "artifact": "20170612-d795361",
+        "artifactItems": "Medidata.AdminProcess.zip,Medidata.Core.Service.zip,Medidata.Database.zip,Medidata.Integrations.ObjectLoader.Service.zip,Medidata.Rave.Integration.Service.zip,MedidataRave.zip,RaveCrystalViewer.zip,RaveWebServices.zip,TripMonitorWS.zip"
+    },
+    {
+        "version": "2017.1.0",
+        "artifact": "20170427-1049dcb",
+        "artifactItems": "Medidata.AdminProcess.zip,Medidata.Core.Service.zip,Medidata.Database.zip,Medidata.Integrations.ObjectLoader.Service.zip,Medidata.Rave.Integration.Service.zip,MedidataRave.zip,RaveCrystalViewer.zip,RaveWebServices.zip,TripMonitorWS.zip"
+    },
+    {
+        "version": "2017.1.0-focused-test",
+        "artifact": "20170612-0b63212",
+        "artifactItems": "Medidata.AdminProcess.zip,Medidata.Core.Service.zip,Medidata.Database.zip,Medidata.Integrations.ObjectLoader.Service.zip,Medidata.Rave.Integration.Service.zip,MedidataRave.zip,RaveCrystalViewer.zip,RaveWebServices.zip,TripMonitorWS.zip"
+    },
+    {
+        "version": "2017.1.1",
+        "artifact": "20230324-a02c9fe53f5",
+        "artifactItems": "Medidata.AdminProcess.zip,Medidata.Core.Service.zip,Medidata.Database.zip,Medidata.Integrations.ObjectLoader.Service.zip,Medidata.Rave.Integration.Service.zip,MedidataRave.zip,RaveCrystalViewer.zip,RaveWebServices.zip,TripMonitorWS.zip"
+    },
+    {
+        "version": "2017.2.0",
+        "artifact": "20170914-0855804",
+        "artifactItems": "Medidata.AdminProcess.zip,Medidata.Core.Service.zip,Medidata.Database.zip,Medidata.Integrations.ObjectLoader.Service.zip,Medidata.Rave.Integration.Service.zip,MedidataRave.zip,RaveCrystalViewer.zip,RaveWebServices.zip,TripMonitorWS.zip"
+    },
+    {
+        "version": "2017.2.1",
+        "artifact": "20171016-ecc8ab2",
+        "artifactItems": "Medidata.AdminProcess.zip,Medidata.Core.Service.zip,Medidata.Database.zip,Medidata.Integrations.ObjectLoader.Service.zip,Medidata.Rave.Integration.Service.zip,MedidataRave.zip,RaveCrystalViewer.zip,RaveWebServices.zip,TripMonitorWS.zip"
+    },
+    {
+        "version": "2017.2.1_ForceiMedSSLToTrue",
+        "artifact": "20171017-cd5290d",
+        "artifactItems": "Medidata.AdminProcess.zip,Medidata.Core.Service.zip,Medidata.Database.zip,Medidata.Integrations.ObjectLoader.Service.zip,Medidata.Rave.Integration.Service.zip,MedidataRave.zip,RaveCrystalViewer.zip,RaveWebServices.zip,TripMonitorWS.zip"
+    },
+    {
+        "version": "2017.2.2",
+        "artifact": "20171207-7847d02",
+        "artifactItems": "Medidata.AdminProcess.zip,Medidata.Core.Service.zip,Medidata.Database.zip,Medidata.Integrations.ObjectLoader.Service.zip,Medidata.Rave.Integration.Service.zip,MedidataRave.zip,RaveCrystalViewer.zip,RaveWebServices.zip,TripMonitorWS.zip"
+    },
+    {
+        "version": "2017.2.2-with-coder-rsg-fix",
+        "artifact": "20180202-65ea008",
+        "artifactItems": "Medidata.AdminProcess.zip,Medidata.Core.Service.zip,Medidata.Database.zip,Medidata.Integrations.ObjectLoader.Service.zip,Medidata.Rave.Integration.Service.zip,MedidataRave.zip,RaveCrystalViewer.zip,RaveWebServices.zip,TripMonitorWS.zip"
+    },
+    {
+        "version": "2017.2.3",
+        "artifact": "20171212-2faf68f",
+        "artifactItems": "Medidata.AdminProcess.zip,Medidata.Core.Service.zip,Medidata.Database.zip,Medidata.Integrations.ObjectLoader.Service.zip,Medidata.Rave.Integration.Service.zip,MedidataRave.zip,RaveCrystalViewer.zip,RaveWebServices.zip,TripMonitorWS.zip"
+    },
+    {
+        "version": "2017.2.4",
+        "artifact": "20201120-41b42d1158",
+        "artifactItems": "Medidata.AdminProcess.zip,Medidata.Core.Service.zip,Medidata.Database.zip,Medidata.Integrations.ObjectLoader.Service.zip,Medidata.Rave.Integration.Service.zip,MedidataRave.zip,RaveCrystalViewer.zip,RaveWebServices.zip,TripMonitorWS.zip"
+    },
+    {
+        "version": "2017.2.4_buildfix",
+        "artifact": "20201119-be4d635d79",
+        "artifactItems": "Medidata.AdminProcess.zip,Medidata.Core.Service.zip,Medidata.Database.zip,Medidata.Integrations.ObjectLoader.Service.zip,Medidata.Rave.Integration.Service.zip,MedidataRave.zip,RaveCrystalViewer.zip,RaveWebServices.zip,TripMonitorWS.zip"
+    },
+    {
+        "version": "2017.2.5",
+        "artifact": "20221213-61c48a51797",
+        "artifactItems": "Medidata.AdminProcess.zip,Medidata.Core.Service.zip,Medidata.Database.zip,Medidata.Integrations.ObjectLoader.Service.zip,Medidata.Rave.Integration.Service.zip,MedidataRave.zip,RaveCrystalViewer.zip,RaveWebServices.zip,TripMonitorWS.zip"
+    },
+    {
+        "version": "2018.1.0",
+        "artifact": "20180420-e56a888",
+        "artifactItems": "Medidata.AdminProcess.zip,Medidata.Core.Service.zip,Medidata.Database.zip,Medidata.Integrations.ObjectLoader.Service.zip,Medidata.Rave.Integration.Service.zip,MedidataRave.zip,RaveCrystalViewer.zip,RaveWebServices.zip,TripMonitorWS.zip"
+    },
+    {
+        "version": "2018.1.0_MCC-396486",
+        "artifact": "20180615-34b6382",
+        "artifactItems": "Medidata.AdminProcess.zip,Medidata.Core.Service.zip,Medidata.Database.zip,Medidata.Integrations.ObjectLoader.Service.zip,Medidata.Rave.Integration.Service.zip,MedidataRave.zip,RaveCrystalViewer.zip,RaveWebServices.zip,TripMonitorWS.zip"
+    },
+    {
+        "version": "2018.1.1",
+        "artifact": "20180703-3c4c8c6",
+        "artifactItems": "Medidata.AdminProcess.zip,Medidata.Core.Service.zip,Medidata.Database.zip,Medidata.Integrations.ObjectLoader.Service.zip,Medidata.Rave.Integration.Service.zip,MedidataRave.zip,RaveCrystalViewer.zip,RaveWebServices.zip,TripMonitorWS.zip"
+    },
+    {
+        "version": "2018.1.2",
+        "artifact": "20180717-3d8dafe",
+        "artifactItems": "Medidata.AdminProcess.zip,Medidata.Core.Service.zip,Medidata.Database.zip,Medidata.Integrations.ObjectLoader.Service.zip,Medidata.Rave.Integration.Service.zip,MedidataRave.zip,RaveCrystalViewer.zip,RaveWebServices.zip,TripMonitorWS.zip"
+    },
+    {
+        "version": "2018.1.3",
+        "artifact": "20180803-2442373",
+        "artifactItems": "Medidata.AdminProcess.zip,Medidata.Core.Service.zip,Medidata.Database.zip,Medidata.Integrations.ObjectLoader.Service.zip,Medidata.Rave.Integration.Service.zip,MedidataRave.zip,RaveCrystalViewer.zip,RaveWebServices.zip,TripMonitorWS.zip"
+    },
+    {
+        "version": "2018.1.3-cmp-testing",
+        "artifact": "20201218-58bcf8838c",
+        "artifactItems": "Medidata.AdminProcess.zip,Medidata.Core.Service.zip,Medidata.Database.zip,Medidata.Integrations.ObjectLoader.Service.zip,Medidata.Rave.Integration.Service.zip,MedidataRave.zip,RaveCrystalViewer.zip,RaveWebServices.zip,TripMonitorWS.zip"
+    },
+    {
+        "version": "2018.1.4",
+        "artifact": "20201120-99a0ca95a3",
+        "artifactItems": "Medidata.AdminProcess.zip,Medidata.Core.Service.zip,Medidata.Database.zip,Medidata.Integrations.ObjectLoader.Service.zip,Medidata.Rave.Integration.Service.zip,MedidataRave.zip,RaveCrystalViewer.zip,RaveWebServices.zip,TripMonitorWS.zip"
+    },
+    {
+        "version": "2018.1.5",
+        "artifact": "20230602-6533b71470",
+        "artifactItems": "Medidata.AdminProcess.zip,Medidata.Core.Service.zip,Medidata.Database.zip,Medidata.Integrations.ObjectLoader.Service.zip,Medidata.Rave.Integration.Service.zip,MedidataRave.zip,RaveCrystalViewer.zip,RaveWebServices.zip,TripMonitorWS.zip"
+    },
+    {
+        "version": "2018.2.0",
+        "artifact": "20190329-34bf782669",
+        "artifactItems": "Medidata.AdminProcess.zip,Medidata.Core.Service.zip,Medidata.Database.zip,Medidata.Integrations.ObjectLoader.Service.zip,Medidata.Rave.Integration.Service.zip,MedidataRave.zip,RaveCrystalViewer.zip,RaveWebServices.zip,TripMonitorWS.zip"
+    },
+    {
+        "version": "2018.2.1",
+        "artifact": "20190208-dd12ecd",
+        "artifactItems": "Medidata.AdminProcess.zip,Medidata.Core.Service.zip,Medidata.Database.zip,Medidata.Integrations.ObjectLoader.Service.zip,Medidata.Rave.Integration.Service.zip,MedidataRave.zip,RaveCrystalViewer.zip,RaveWebServices.zip,TripMonitorWS.zip"
+    },
+    {
+        "version": "2018.2.2",
+        "artifact": "20181219-7d75fdd",
+        "artifactItems": "Medidata.AdminProcess.zip,Medidata.Core.Service.zip,Medidata.Database.zip,Medidata.Integrations.ObjectLoader.Service.zip,Medidata.Rave.Integration.Service.zip,MedidataRave.zip,RaveCrystalViewer.zip,RaveWebServices.zip,TripMonitorWS.zip"
+    },
+    {
+        "version": "2018.2.3",
+        "artifact": "20190219-d05073e",
+        "artifactItems": "Medidata.AdminProcess.zip,Medidata.Core.Service.zip,Medidata.Database.zip,Medidata.Integrations.ObjectLoader.Service.zip,Medidata.Rave.Integration.Service.zip,MedidataRave.zip,RaveCrystalViewer.zip,RaveWebServices.zip,TripMonitorWS.zip"
+    },
+    {
+        "version": "2018.2.4",
+        "artifact": "20190417-0fc7083368",
+        "artifactItems": "Medidata.AdminProcess.zip,Medidata.Core.Service.zip,Medidata.Database.zip,Medidata.Integrations.ObjectLoader.Service.zip,Medidata.Rave.Integration.Service.zip,MedidataRave.zip,RaveCrystalViewer.zip,RaveWebServices.zip,TripMonitorWS.zip"
+    },
+    {
+        "version": "2018.2.5",
+        "artifact": "20201120-d5827299cf",
+        "artifactItems": "Medidata.AdminProcess.zip,Medidata.Core.Service.zip,Medidata.Database.zip,Medidata.Integrations.ObjectLoader.Service.zip,Medidata.Rave.Integration.Service.zip,MedidataRave.zip,RaveCrystalViewer.zip,RaveWebServices.zip,TripMonitorWS.zip"
+    },
+    {
+        "version": "2018.2.6",
+        "artifact": "20201120-122d8f03ad",
+        "artifactItems": "Medidata.AdminProcess.zip,Medidata.Core.Service.zip,Medidata.Database.zip,Medidata.Integrations.ObjectLoader.Service.zip,Medidata.Rave.Integration.Service.zip,MedidataRave.zip,RaveCrystalViewer.zip,RaveWebServices.zip,TripMonitorWS.zip"
+    },
+    {
+        "version": "2018.2.7",
+        "artifact": "20221017-9f4bb9afb53",
+        "artifactItems": "Medidata.AdminProcess.zip,Medidata.Core.Service.zip,Medidata.Database.zip,Medidata.Integrations.ObjectLoader.Service.zip,Medidata.Rave.Integration.Service.zip,MedidataRave.zip,RaveCrystalViewer.zip,RaveWebServices.zip,TripMonitorWS.zip"
+    },
+    {
+        "version": "2019.1.0",
+        "artifact": "20190501-5575d37d11",
+        "artifactItems": "Medidata.AdminProcess.zip,Medidata.Core.Service.zip,Medidata.Database.zip,Medidata.Integrations.ObjectLoader.Service.zip,Medidata.Rave.Integration.Service.zip,MedidataRave.zip,RaveCrystalViewer.zip,RaveWebServices.zip,TripMonitorWS.zip"
+    },
+    {
+        "version": "2019.1.0-spike-gz",
+        "artifact": "20190531-80a3823d41",
+        "artifactItems": "Medidata.AdminProcess.zip,Medidata.Core.Service.zip,Medidata.Database.zip,Medidata.Integrations.ObjectLoader.Service.zip,Medidata.Rave.Integration.Service.zip,MedidataRave.zip,RaveCrystalViewer.zip,RaveWebServices.zip,TripMonitorWS.zip"
+    },
+    {
+        "version": "2019.1.1",
+        "artifact": "20190718-8473edd355",
+        "artifactItems": "Medidata.AdminProcess.zip,Medidata.Core.Service.zip,Medidata.Database.zip,Medidata.Integrations.ObjectLoader.Service.zip,Medidata.Rave.Integration.Service.zip,MedidataRave.zip,RaveCrystalViewer.zip,RaveWebServices.zip,TripMonitorWS.zip"
+    },
+    {
+        "version": "2019.1.1_dryrun",
+        "artifact": "20190711-0e9418cec9",
+        "artifactItems": "Medidata.AdminProcess.zip,Medidata.Core.Service.zip,Medidata.Database.zip,Medidata.Integrations.ObjectLoader.Service.zip,Medidata.Rave.Integration.Service.zip,MedidataRave.zip,RaveCrystalViewer.zip,RaveWebServices.zip,TripMonitorWS.zip"
+    },
+    {
+        "version": "2019.1.2",
+        "artifact": "20190821-98fc07016d",
+        "artifactItems": "Medidata.AdminProcess.zip,Medidata.Core.Service.zip,Medidata.Database.zip,Medidata.Integrations.ObjectLoader.Service.zip,Medidata.Rave.Integration.Service.zip,MedidataRave.zip,RaveCrystalViewer.zip,RaveWebServices.zip,TripMonitorWS.zip"
+    },
+    {
+        "version": "2019.1.3",
+        "artifact": "20191010-37cbd87e6f",
+        "artifactItems": "Medidata.AdminProcess.zip,Medidata.Core.Service.zip,Medidata.Database.zip,Medidata.Integrations.ObjectLoader.Service.zip,Medidata.Rave.Integration.Service.zip,MedidataRave.zip,RaveCrystalViewer.zip,RaveWebServices.zip,TripMonitorWS.zip"
+    },
+    {
+        "version": "2019.1.4",
+        "artifact": "20201208-516ad06c58",
+        "artifactItems": "Medidata.AdminProcess.zip,Medidata.Core.Service.zip,Medidata.Database.zip,Medidata.Integrations.ObjectLoader.Service.zip,Medidata.Rave.Integration.Service.zip,MedidataRave.zip,RaveCrystalViewer.zip,RaveWebServices.zip,TripMonitorWS.zip"
+    },
+    {
+        "version": "2019.2.0",
+        "artifact": "20190927-934d5a2532",
+        "artifactItems": "Medidata.AdminProcess.zip,Medidata.Core.Service.zip,Medidata.Database.zip,Medidata.Integrations.ObjectLoader.Service.zip,Medidata.Rave.Integration.Service.zip,MedidataRave.zip,RaveCrystalViewer.zip,RaveWebServices.zip,TripMonitorWS.zip"
+    },
+    {
+        "version": "2019.2.0_merge",
+        "artifact": "20200721-c0b2e350ef",
+        "artifactItems": "Medidata.AdminProcess.zip,Medidata.Core.Service.zip,Medidata.Database.zip,Medidata.Integrations.ObjectLoader.Service.zip,Medidata.Rave.Integration.Service.zip,MedidataRave.zip,RaveCrystalViewer.zip,RaveWebServices.zip,TripMonitorWS.zip"
+    },
+    {
+        "version": "2019.2.1",
+        "artifact": "20191219-6a1046cdbd",
+        "artifactItems": "Medidata.AdminProcess.zip,Medidata.Core.Service.zip,Medidata.Database.zip,Medidata.Integrations.ObjectLoader.Service.zip,Medidata.Rave.Integration.Service.zip,MedidataRave.zip,RaveCrystalViewer.zip,RaveWebServices.zip,TripMonitorWS.zip"
+    },
+    {
+        "version": "2019.2.2",
+        "artifact": "20200420-30792060da",
+        "artifactItems": "Medidata.AdminProcess.zip,Medidata.Core.Service.zip,Medidata.Database.zip,Medidata.Integrations.ObjectLoader.Service.zip,Medidata.Rave.Integration.Service.zip,MedidataRave.zip,RaveCrystalViewer.zip,RaveWebServices.zip,TripMonitorWS.zip"
+    },
+    {
+        "version": "2019.2.3",
+        "artifact": "20201208-1f951006e5",
+        "artifactItems": "Medidata.AdminProcess.zip,Medidata.Core.Service.zip,Medidata.Database.zip,Medidata.Integrations.ObjectLoader.Service.zip,Medidata.Rave.Integration.Service.zip,MedidataRave.zip,RaveCrystalViewer.zip,RaveWebServices.zip,TripMonitorWS.zip"
+    },
+    {
+        "version": "2019.2.3-test",
+        "artifact": "20201118-da8442e6b2",
+        "artifactItems": "Medidata.AdminProcess.zip,Medidata.Core.Service.zip,Medidata.Database.zip,Medidata.Integrations.ObjectLoader.Service.zip,Medidata.Rave.Integration.Service.zip,MedidataRave.zip,RaveCrystalViewer.zip,RaveWebServices.zip,TripMonitorWS.zip"
+    },
+    {
+        "version": "2020.1.0",
+        "artifact": "20200124-bba471254f",
+        "artifactItems": "Medidata.AdminProcess.zip,Medidata.Core.Service.zip,Medidata.Database.zip,Medidata.Integrations.ObjectLoader.Service.zip,Medidata.Rave.Integration.Service.zip,MedidataRave.zip,RaveCrystalViewer.zip,RaveWebServices.zip,TripMonitorWS.zip"
+    },
+    {
+        "version": "2020.2.0",
+        "artifact": "20200417-eed79e5e78",
+        "artifactItems": "Medidata.AdminProcess.zip,Medidata.Core.Service.zip,Medidata.Database.zip,Medidata.Integrations.ObjectLoader.Service.zip,Medidata.Rave.Integration.Service.zip,MedidataRave.zip,RaveCrystalViewer.zip,RaveWebServices.zip,TripMonitorWS.zip"
+    },
+    {
+        "version": "2020.2.0_revert_MCC_341440",
+        "artifact": "20200507-992d7e1366",
+        "artifactItems": "Medidata.AdminProcess.zip,Medidata.Core.Service.zip,Medidata.Database.zip,Medidata.Integrations.ObjectLoader.Service.zip,Medidata.Rave.Integration.Service.zip,MedidataRave.zip,RaveCrystalViewer.zip,RaveWebServices.zip,TripMonitorWS.zip"
+    },
+    {
+        "version": "2020.2.1",
+        "artifact": "20201208-f0398d88c7",
+        "artifactItems": "Medidata.AdminProcess.zip,Medidata.Core.Service.zip,Medidata.Database.zip,Medidata.Integrations.ObjectLoader.Service.zip,Medidata.Rave.Integration.Service.zip,MedidataRave.zip,RaveCrystalViewer.zip,RaveWebServices.zip,TripMonitorWS.zip"
+    },
+    {
+        "version": "2020.3.0",
+        "artifact": "20200924-5dad87d144",
+        "artifactItems": "Medidata.AdminProcess.zip,Medidata.Core.Service.zip,Medidata.Database.zip,Medidata.Integrations.ObjectLoader.Service.zip,Medidata.Rave.Integration.Service.zip,MedidataRave.zip,RaveCrystalViewer.zip,RaveWebServices.zip,TripMonitorWS.zip"
+    },
+    {
+        "version": "2020.3.1",
+        "artifact": "20210210-36d4d2af9c5",
+        "artifactItems": "Medidata.AdminProcess.zip,Medidata.Core.Service.zip,Medidata.Database.zip,Medidata.Integrations.ObjectLoader.Service.zip,Medidata.Rave.Integration.Service.zip,MedidataRave.zip,RaveCrystalViewer.zip,RaveWebServices.zip,TripMonitorWS.zip"
+    },
+    {
+        "version": "2020.3.2",
+        "artifact": "20210217-90b56ef11e",
+        "artifactItems": "Medidata.AdminProcess.zip,Medidata.Core.Service.zip,Medidata.Database.zip,Medidata.Integrations.ObjectLoader.Service.zip,Medidata.Rave.Integration.Service.zip,MedidataRave.zip,RaveCrystalViewer.zip,RaveWebServices.zip,TripMonitorWS.zip"
+    },
+    {
+        "version": "2021.1.0",
+        "artifact": "20210419-02a8cb0f8e",
+        "artifactItems": "Medidata.AdminProcess.zip,Medidata.Core.Service.zip,Medidata.Database.zip,Medidata.Integrations.ObjectLoader.Service.zip,Medidata.Rave.Integration.Service.zip,MedidataRave.zip,RaveCrystalViewer.zip,RaveWebServices.zip,TripMonitorWS.zip"
+    },
+    {
+        "version": "2021.1.1",
+        "artifact": "20210625-31e79cda9f",
+        "artifactItems": "Medidata.AdminProcess.zip,Medidata.Core.Service.zip,Medidata.Database.zip,Medidata.Integrations.ObjectLoader.Service.zip,Medidata.Rave.Integration.Service.zip,MedidataRave.zip,RaveCrystalViewer.zip,RaveWebServices.zip,TripMonitorWS.zip"
+    },
+    {
+        "version": "2021.1.2",
+        "artifact": "20210804-ec7b63521a",
+        "artifactItems": "Medidata.AdminProcess.zip,Medidata.Core.Service.zip,Medidata.Database.zip,Medidata.Integrations.ObjectLoader.Service.zip,Medidata.Rave.Integration.Service.zip,MedidataRave.zip,RaveCrystalViewer.zip,RaveWebServices.zip,TripMonitorWS.zip"
+    },
+    {
+        "version": "2021.1.2_cmp",
+        "artifact": "20220406-faf935d2ee",
+        "artifactItems": "Medidata.AdminProcess.zip,Medidata.Core.Service.zip,Medidata.Database.zip,Medidata.Integrations.ObjectLoader.Service.zip,Medidata.Rave.Integration.Service.zip,MedidataRave.zip,RaveCrystalViewer.zip,RaveWebServices.zip,TripMonitorWS.zip"
+    },
+    {
+        "version": "2021.1.3",
+        "artifact": "20220610-39c82fed80",
+        "artifactItems": "Medidata.AdminProcess.zip,Medidata.Core.Service.zip,Medidata.Database.zip,Medidata.Integrations.ObjectLoader.Service.zip,Medidata.Rave.Integration.Service.zip,MedidataRave.zip,RaveCrystalViewer.zip,RaveWebServices.zip,TripMonitorWS.zip"
+    },
+    {
+        "version": "2021.1.4",
+        "artifact": "20230515-2b5e32157a",
+        "artifactItems": "Medidata.AdminProcess.zip,Medidata.Core.Service.zip,Medidata.Database.zip,Medidata.Integrations.ObjectLoader.Service.zip,Medidata.Rave.Integration.Service.zip,MedidataRave.zip,RaveCrystalViewer.zip,RaveWebServices.zip,TripMonitorWS.zip"
+    },
+    {
+        "version": "2021.2.0",
+        "artifact": "20210923-fe4c4adbbc",
+        "artifactItems": "Medidata.AdminProcess.zip,Medidata.Core.Service.zip,Medidata.Database.zip,Medidata.Integrations.ObjectLoader.Service.zip,Medidata.Rave.Integration.Service.zip,MedidataRave.zip,RaveCrystalViewer.zip,RaveWebServices.zip,TripMonitorWS.zip"
+    },
+    {
+        "version": "2021.2.1",
+        "artifact": "20220425-ab5893ede71",
+        "artifactItems": "Medidata.AdminProcess.zip,Medidata.Core.Service.zip,Medidata.Database.zip,Medidata.Integrations.ObjectLoader.Service.zip,Medidata.Rave.Integration.Service.zip,MedidataRave.zip,RaveCrystalViewer.zip,RaveWebServices.zip,TripMonitorWS.zip"
+    },
+    {
+        "version": "logging",
+        "artifact": "20170517-0d740ab",
+        "artifactItems": "Medidata.AdminProcess.zip,Medidata.Core.Service.zip,Medidata.Database.zip,Medidata.Integrations.ObjectLoader.Service.zip,Medidata.Rave.Integration.Service.zip,MedidataRave.zip,RaveCrystalViewer.zip,RaveWebServices.zip,TripMonitorWS.zip"
+    },
+    {
+        "version": "mcc965652_2021.1.3",
+        "artifact": "20220921-faf0ba44da",
+        "artifactItems": "Medidata.AdminProcess.zip,Medidata.Core.Service.zip,Medidata.Database.zip,Medidata.Integrations.ObjectLoader.Service.zip,Medidata.Rave.Integration.Service.zip,MedidataRave.zip,RaveCrystalViewer.zip,RaveWebServices.zip,TripMonitorWS.zip"
+    }
+]

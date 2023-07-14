@@ -1,0 +1,6 @@
+Server running on port \\.\pipe\64658643-e1fb-48a0-9414-75f1ffde3da8
+Login token generated for: ykotti
+Connected!
+connection closed
+Connected!
+connection closed
