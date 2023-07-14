@@ -12,7 +12,10 @@ const Timer = forwardRef(({ expiryTimestamp }, ref) => {
         expiryTimestamp, onExpire: () => {
             alert('Session Expired!! Login again!!');
             sessionStorage.removeItem("api_CloudBoltToken");
+<<<<<<< HEAD
             sessionStorage.removeItem("currentUser");
+=======
+>>>>>>> a1938710be3a105b5143f81c8efabb4f515332ab
             navigate("/login");
         }
     });

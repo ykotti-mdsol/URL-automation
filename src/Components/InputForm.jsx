@@ -34,7 +34,11 @@ import productVersionList_Legacy_Remora from "../assets/productVersion_legacy_re
 import productVersionList_Rave_Remora from "../assets/productVersion_rave_remora.json";
 import productVersionList_Rave_Classic from "../assets/productVersion_rave_classic.json";
 import productVersionList_Default_List from "../assets/productVersion_Default_List.json";
+<<<<<<< HEAD
 import "./navbar.css";
+=======
+
+>>>>>>> a1938710be3a105b5143f81c8efabb4f515332ab
 const InputForm = () => {
 
     const [orderId, setOrderId] = useState('');
@@ -43,7 +47,11 @@ const InputForm = () => {
     const [classicOption, setClassicOption] = useState(false);
     const [remoraOption, setRemoraOption] = useState(false);
     const [isLoading, setIsLoading] = useState(false);
+<<<<<<< HEAD
     const [productVersionValue, setProductVersionValue] = useState();
+=======
+    const [productVersionValue,setProductVersionValue] = useState();
+>>>>>>> a1938710be3a105b5143f81c8efabb4f515332ab
     const [resetKey, setResetKey] = useState(0);
     const apiCloudBoltToken = sessionStorage.getItem("api_CloudBoltToken");
 
@@ -68,22 +76,38 @@ const InputForm = () => {
     const handleRaveLegacyOption = () => {
         setRaveLegacyOption(true);
         setRaveOption(false);
+<<<<<<< HEAD
         SelectInputClear();
+=======
+         SelectInputClear();
+>>>>>>> a1938710be3a105b5143f81c8efabb4f515332ab
     };
     const handelRaveOption = () => {
         setRaveOption(true);
         setRaveLegacyOption(false);
+<<<<<<< HEAD
         SelectInputClear();
+=======
+         SelectInputClear();
+>>>>>>> a1938710be3a105b5143f81c8efabb4f515332ab
     };
     const handleClasssicOption = () => {
         setClassicOption(true);
         setRemoraOption(false);
+<<<<<<< HEAD
         SelectInputClear();
+=======
+         SelectInputClear();
+>>>>>>> a1938710be3a105b5143f81c8efabb4f515332ab
     };
     const handelRemoraOption = () => {
         setRemoraOption(true);
         setClassicOption(false);
+<<<<<<< HEAD
         SelectInputClear();
+=======
+         SelectInputClear();
+>>>>>>> a1938710be3a105b5143f81c8efabb4f515332ab
     };
     const handelLogOut = () => {
         sessionStorage.removeItem("api_CloudBoltToken");
@@ -116,8 +140,11 @@ const InputForm = () => {
         return a.value.localeCompare(b.value);
     });
     const timerRef = useRef(null);
+<<<<<<< HEAD
     const options = { day: '2-digit', month: '2-digit', year: 'numeric', hour: '2-digit', minute: '2-digit', second: '2-digit', hour12: false };
     const currentDateTime = new Date().toLocaleString(undefined, options).replace(',', '');
+=======
+>>>>>>> a1938710be3a105b5143f81c8efabb4f515332ab
 
     const handleGetTotalSeconds = () => {
         if (timerRef.current) {
@@ -125,6 +152,7 @@ const InputForm = () => {
             secondsRef.current = totalSeconds;
         }
     };
+<<<<<<< HEAD
     const handleCreateDatabag = () => {
         handleGetTotalSeconds();
         navigate("/inputform", {
@@ -164,6 +192,11 @@ const InputForm = () => {
     const handleSubmit = async (e) => {
 
         if (!orderId || (DBServerRef == null) || (productVersionValue == null)
+=======
+    const handleSubmit = async (e) => {
+
+        if (!orderId || (DBServerRef==null) || (productVersionValue==null)
+>>>>>>> a1938710be3a105b5143f81c8efabb4f515332ab
             || !(raveLegacyOption || raveOption) || !(classicOption || remoraOption)
         ) {
             console.log("Required some fields");
@@ -172,39 +205,57 @@ const InputForm = () => {
         e.preventDefault();
         setIsLoading(true);
         const orderIDUrl = "http://10.194.40.99:3550/generateDatabag/new"; //`https://hdcgreeniaas.lab1.hdc.mdsol.com/api/v3/cmp/resources/${orderId}/`;
+<<<<<<< HEAD
         // const orderIDUrl = "http://localhost:5000/generateDatabag/new"; //`https://hdcgreeniaas.lab1.hdc.mdsol.com/api/v3/cmp/resources/${orderId}/`;
         const app = raveOption ? "Rave" : raveLegacyOption ? "Legacy" : null;
         const version = classicOption ? "Classic" : remoraOption ? "Remora" : null;
         const productVersionActualValue = productVersionValue ? productVersionValue.value : null;
         const currentUser = sessionStorage.getItem("currentUser");
+=======
+        //const orderIDUrl = "http://localhost:4000/generateDatabag/new"; //`https://hdcgreeniaas.lab1.hdc.mdsol.com/api/v3/cmp/resources/${orderId}/`;
+        const app = raveOption ? "Rave" : raveLegacyOption ? "Legacy" : null;
+        const version = classicOption ? "Classic" : remoraOption ? "Remora" : null;
+        const productVersionActualValue = productVersionValue ? productVersionValue.value : null;
+>>>>>>> a1938710be3a105b5143f81c8efabb4f515332ab
         const bodyData = {
             "orderId": orderId,
             "productVersion": productVersionActualValue,
             "dbServerName": DBServerRef.current,
             "app": app,
             "version": version,
+<<<<<<< HEAD
             "token": apiCloudBoltToken,
             "currentUser": currentUser,
             "currentDateTime": currentDateTime
+=======
+            "token": apiCloudBoltToken
+>>>>>>> a1938710be3a105b5143f81c8efabb4f515332ab
         };
         try {
             const response = await axios.post(orderIDUrl, bodyData);
             if (response.status < 300) {
                 handleGetTotalSeconds();
+<<<<<<< HEAD
                 const resData = response.data;
                 // console.log(resData);
                 const url = resData['global']['RAVE_URL_BASE'];
                 //console.log(url);
+=======
+>>>>>>> a1938710be3a105b5143f81c8efabb4f515332ab
                 navigate("/success", {
                     state: {
                         orderId: orderId,
                         version: version,
                         dbName: DBServerRef.current,
+<<<<<<< HEAD
                         secondsRemaining: secondsRef.current,
                         url: url,
                         app: app == "Rave" ? "rave" : "rave-legacy",
                         deployVersion: version == "Classic" ? "rave" : "remora",
                         template: productVersionActualValue
+=======
+                        secondsRemaining: secondsRef.current
+>>>>>>> a1938710be3a105b5143f81c8efabb4f515332ab
                     }
                 })
             }
@@ -213,8 +264,11 @@ const InputForm = () => {
                 if (error.response.status == 401) {
                     alert("Session Expired!! Login again!!");
                     sessionStorage.removeItem("api_CloudBoltToken");
+<<<<<<< HEAD
                     sessionStorage.removeItem("currentUser");
                     sessionStorage.removeItem("currentUserPassword");
+=======
+>>>>>>> a1938710be3a105b5143f81c8efabb4f515332ab
                     navigate("/login");
                 }
                 else {
@@ -245,10 +299,16 @@ const InputForm = () => {
         <>
             {apiCloudBoltToken ? (
                 <>
+<<<<<<< HEAD
                     <div style={{ display: 'flex', flexDirection: 'column', minHeight: '100vh', margin: '0px' }}>
 
                         <MDBNavbar style={{ backgroundColor: 'rgba(51, 81, 119, 1)', margin: '0px', padding: '0px' }}>
                             <MDBContainer fluid className="navbarContainer">
+=======
+                    <div style={{ display: 'flex', flexDirection: 'column', minHeight: '100vh', margin: '0 auto' }}>
+                        <MDBNavbar style={{ backgroundColor: 'rgba(51, 81, 119, 1)', margin: '0' }}>
+                            <MDBContainer fluid>
+>>>>>>> a1938710be3a105b5143f81c8efabb4f515332ab
                                 <MDBNavbarBrand href='#'>
                                     <img
                                         src={medidataLogo}
@@ -257,6 +317,7 @@ const InputForm = () => {
                                         loading='lazy'
                                     />
                                 </MDBNavbarBrand>
+<<<<<<< HEAD
                                 {/* <MDBNavbarNav className='mr-auto mb-2 mb-lg-0'> */}
                                 <div className="ms-auto activePage " onClick={handleCreateDatabag}>
                                     <MDBNavbarItem className="d-flex align-items-center   ">
@@ -272,6 +333,9 @@ const InputForm = () => {
                                     </MDBNavbarItem>
                                 </div>
                                 <MDBNavbarItem className="d-flex align-items-center ms-4">
+=======
+                                <MDBNavbarItem className="d-flex align-items-center">
+>>>>>>> a1938710be3a105b5143f81c8efabb4f515332ab
                                     <Timer ref={timerRef} expiryTimestamp={time} />
                                     <MDBDropdown>
                                         <MDBDropdownToggle tag='a' className='nav-link' role='button'>
@@ -291,7 +355,11 @@ const InputForm = () => {
                                     <h2 className="fw-bold text-center">TS - URL Deployment Tool </h2>
                                     <MDBCardBody className='p-1'>
                                         <form >
+<<<<<<< HEAD
                                             <MDBInput wrapperClass='mt-4' label='Cloudbolt Resource ID' id='orderId' type='text' size='lg'
+=======
+                                            <MDBInput wrapperClass='mt-4' label='Cloudbolt Order ID' id='orderId' type='text' size='lg'
+>>>>>>> a1938710be3a105b5143f81c8efabb4f515332ab
                                                 onChange={(e) => setOrderId(e.target.value)}
                                                 required
                                                 value={orderId}

@@ -3,7 +3,10 @@ import { useNavigate, useLocation } from 'react-router-dom';
 import medidataLogo from "../assets/Medidata_Logo_white.png";
 import errorLogo from "../assets/error.gif";
 import Timer from "./Timer";
+<<<<<<< HEAD
 import axios from "axios";
+=======
+>>>>>>> a1938710be3a105b5143f81c8efabb4f515332ab
 import {
     MDBBtn,
     MDBContainer,
@@ -44,6 +47,7 @@ const Error = () => {
   };
     const handelLogOut = () => {
         sessionStorage.removeItem("api_CloudBoltToken");
+<<<<<<< HEAD
         sessionStorage.removeItem("currentUser");
         sessionStorage.removeItem("currentUserPassword");
         navigate("/login");
@@ -84,6 +88,10 @@ const Error = () => {
         }
 
     }
+=======
+        navigate("/login");
+    };
+>>>>>>> a1938710be3a105b5143f81c8efabb4f515332ab
     const handleSubmit = () => {
         handleGetTotalSeconds();
         if (secondsRef.current > 0) {
@@ -95,7 +103,10 @@ const Error = () => {
         }
         else {
             sessionStorage.removeItem("api_CloudBoltToken");
+<<<<<<< HEAD
             sessionStorage.removeItem("currentUser");
+=======
+>>>>>>> a1938710be3a105b5143f81c8efabb4f515332ab
             navigate('/');
         }
     };
@@ -113,6 +124,7 @@ const Error = () => {
                                 loading='lazy'
                             />
                         </MDBNavbarBrand>
+<<<<<<< HEAD
                         <MDBNavbarItem className="d-flex align-items-center ms-auto">
                             <a className="createDatabagLink" onClick={handleCreateDatabag}>Create Databag</a>
                         </MDBNavbarItem>
@@ -124,6 +136,10 @@ const Error = () => {
                         </MDBNavbarItem>
                         <MDBNavbarItem className="d-flex align-items-center ms-4">
                             <Timer ref={timerRef} expiryTimestamp={time} />
+=======
+                        <MDBNavbarItem className="d-flex align-items-center">
+                        <Timer ref={timerRef} expiryTimestamp={time} />
+>>>>>>> a1938710be3a105b5143f81c8efabb4f515332ab
                             <MDBDropdown>
                                 <MDBDropdownToggle tag='a' className='nav-link' role='button'>
                                     <MDBIcon className="text-light" fas icon="user-alt" size='lg' />
